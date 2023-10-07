@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float camSensitivity = 2f;
     private float xRotation = 0;
     private float yRotation = 0;
+
+    [Header("Pick Up")] 
+    [SerializeField] private float pickUpDistance = 5f;
     
     //states and inputs 
     private Vector3 horizontal;
@@ -44,6 +47,8 @@ public class PlayerController : MonoBehaviour
         //get all inputs
         GetMovementInputs();
         GetLookInputs();
+        
+        PickUpRay();
     }
 
     void FixedUpdate()
@@ -104,4 +109,26 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    private void PickUpRay()
+    {
+        //ray from center of the screen
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        
+        RaycastHit hit;
+        //cast the ray
+        if (Physics.Raycast(ray, out hit, pickUpDistance))
+        {
+            GameObject other = hit.collider.gameObject;
+            if (other.CompareTag("Collectible"))
+            {
+                Debug.Log("You could collect " + other.name );
+            }
+        }
+        else
+        {
+            Debug.Log("");
+        }
+    }
+
 }
