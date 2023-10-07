@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour
         //get all inputs
         GetMovementInputs();
         GetLookInputs();
-        Debug.Log(rb.velocity.magnitude);
     }
 
     void FixedUpdate()
