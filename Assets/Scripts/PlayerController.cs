@@ -180,7 +180,12 @@ public class PlayerController : MonoBehaviour
             if (other.CompareTag("Mob"))
             {
                 MobController mob = other.GetComponent<MobController>();
-                mob.TakeDamage(swordDamage);
+                String drop = mob.TakeDamage(swordDamage);
+                if (drop != null)
+                {
+                    //drop item
+                    Debug.Log("acquired " + drop);
+                }
             }
         }
         yield return new WaitForSeconds(swordInterval - damageDelay); //wait for animation to finish
