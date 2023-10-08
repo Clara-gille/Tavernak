@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Properties;
 using UnityEngine;
 
@@ -22,7 +23,8 @@ public class PlayerController : MonoBehaviour
     private float yRotation = 0;
 
     [Header("Pick Up")] 
-    [SerializeField] private float pickUpDistance = 5f;
+    [SerializeField] private float pickUpDistance = 3f;
+    [SerializeField] private TextMeshProUGUI pickUpText;
     
     //states and inputs 
     private Vector3 horizontal;
@@ -122,12 +124,12 @@ public class PlayerController : MonoBehaviour
             GameObject other = hit.collider.gameObject;
             if (other.CompareTag("Collectible"))
             {
-                Debug.Log("You could collect " + other.name );
+                pickUpText.gameObject.SetActive(true);
             }
         }
         else
         {
-            Debug.Log("");
+            pickUpText.gameObject.SetActive(false);
         }
     }
 
