@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float camSensitivity = 2f;
     private float xRotation = 0;
     private float yRotation = 0;
+    
+    [Header("Sword")]
+    [SerializeField] private GameObject sword;
+    private Animator swordAnimator;
 
     [Header("Pick Up")] 
     [SerializeField] private float pickUpDistance = 3f;
@@ -32,12 +36,18 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private bool isRunning;
     private bool isPickingUp;
+    private bool isAttacking;
     
     private bool isGrounded = false;
+    private static readonly int Swing = Animator.StringToHash("Swing");
+    private static readonly int IsSwinging = Animator.StringToHash("isSwinging");
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.drag = groundDrag;
+        
+        swordAnimator = sword.GetComponent<Animator>();
         
         //hide and lock cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -87,6 +97,9 @@ public class PlayerController : MonoBehaviour
         
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        
+        //sword attack
+        swordAnimator.SetBool(IsSwinging, isAttacking);
     }
     
     private void GetMovementInputs()
@@ -102,6 +115,7 @@ public class PlayerController : MonoBehaviour
         xRotation -= Input.GetAxisRaw("Mouse Y") * camSensitivity;
         yRotation += Input.GetAxisRaw("Mouse X") * camSensitivity;
         isPickingUp = Input.GetButton("Fire2"); //right click
+        isAttacking = Input.GetButton("Fire1"); //left click
     }
 
     private void OnCollisionEnter(Collision other)

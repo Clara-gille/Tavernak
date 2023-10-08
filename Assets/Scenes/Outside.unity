@@ -1105,43 +1105,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.53816557
+      value: 0.484
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6863671
+      value: -0.873
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.79691154
+      value: 0.738
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6901445
+      value: 0.72066057
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0827972
+      value: -0.02950775
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.71443045
+      value: 0.6926413
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.080214866
+      value: 0.005074796
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.019
+      value: -2.841
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 91.979
+      value: 87.776
       objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -13.24
+      value: -1.926
       objectReference: {fileID: 0}
     - target: {fileID: 2142021146967332986, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
       propertyPath: m_Convex
@@ -1151,13 +1151,42 @@ PrefabInstance:
     - {fileID: 2142021146967332986, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626339997}
   m_SourcePrefab: {fileID: 100100000, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
+--- !u!1 &1626339992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
+  m_PrefabInstance: {fileID: 1463990805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1626339993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
   m_PrefabInstance: {fileID: 1463990805}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1626339997
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626339992}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 537482e33890f1b41b97a14a7944992b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1644379248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1560,6 +1589,7 @@ MonoBehaviour:
   airDrag: 0.5
   cam: {fileID: 611185724}
   camSensitivity: 2
+  sword: {fileID: 1626339992}
   pickUpDistance: 3
   pickUpText: {fileID: 655071712}
 --- !u!1 &2073935427
