@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 vertical;
     private bool isJumping;
     private bool isRunning;
+    private bool isPickingUp;
     
     private bool isGrounded = false;
     void Start()
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         xRotation -= Input.GetAxisRaw("Mouse Y") * camSensitivity;
         yRotation += Input.GetAxisRaw("Mouse X") * camSensitivity;
+        isPickingUp = Input.GetButton("Fire2"); //right click
     }
 
     private void OnCollisionEnter(Collision other)
@@ -125,6 +127,12 @@ public class PlayerController : MonoBehaviour
             if (other.CompareTag("Collectible"))
             {
                 pickUpText.gameObject.SetActive(true);
+                if (isPickingUp)
+                {
+                    CollectibleController collectible = other.GetComponent<CollectibleController>();
+                    collectible.PickUp();
+                }
+                
             }
         }
         else
