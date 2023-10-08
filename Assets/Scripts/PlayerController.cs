@@ -25,7 +25,11 @@ public class PlayerController : MonoBehaviour
     [Header("Sword")]
     [SerializeField] private GameObject sword;
     private Animator swordAnimator;
-
+    [SerializeField] private float swordRange = 3f;
+    [SerializeField] private float swordInterval = 0.667f; //length of swing animation
+    [SerializeField] private float damageDelay = 0.2f; //delay before animation reaches peak and damage is dealt
+    private bool canSwing = true;
+    
     [Header("Pick Up")] 
     [SerializeField] private float pickUpDistance = 3f;
     [SerializeField] private TextMeshProUGUI pickUpText;
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
         GetLookInputs();
         
         PickUpRay();
+        SwordHandler();
     }
 
     void FixedUpdate()
@@ -89,7 +94,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(force, ForceMode.Impulse);
     }
     
-    //player head movement
+    //player head movement 
     private void PlayerLook()
     {   
         //clamp x rotation to avoid over rotation
@@ -97,9 +102,6 @@ public class PlayerController : MonoBehaviour
         
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.rotation = Quaternion.Euler(0, yRotation, 0);
-        
-        //sword attack
-        swordAnimator.SetBool(IsSwinging, isAttacking);
     }
     
     private void GetMovementInputs()
@@ -132,10 +134,9 @@ public class PlayerController : MonoBehaviour
     {
         //ray from center of the screen
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        
-        RaycastHit hit;
+
         //cast the ray
-        if (Physics.Raycast(ray, out hit, pickUpDistance))
+        if (Physics.Raycast(ray, out var hit, pickUpDistance))
         {
             GameObject other = hit.collider.gameObject;
             if (other.CompareTag("Collectible"))
@@ -153,6 +154,32 @@ public class PlayerController : MonoBehaviour
         {
             pickUpText.gameObject.SetActive(false);
         }
+    }
+
+    private void SwordHandler()
+    {
+        //sword attack animation
+        swordAnimator.SetBool(IsSwinging, isAttacking);
+        if (isAttacking && canSwing)
+        {
+            StartCoroutine(SwordAttack());
+        }
+    }
+
+    IEnumerator SwordAttack()
+    {   
+        canSwing = false;
+        yield return new WaitForSeconds(damageDelay); //wait for animation to reach peak
+        //ray from center of the screen
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        //cast the ray
+        if (Physics.Raycast(ray, out var hit, swordRange))
+        {
+            GameObject other = hit.collider.gameObject;
+            Debug.Log("sword hit " + other.name);
+        }
+        yield return new WaitForSeconds(swordInterval - damageDelay); //wait for animation to finish
+        canSwing = true;
     }
 
 }

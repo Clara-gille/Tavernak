@@ -1590,6 +1590,9 @@ MonoBehaviour:
   cam: {fileID: 611185724}
   camSensitivity: 2
   sword: {fileID: 1626339992}
+  swordRange: 2
+  swordInterval: 0.667
+  damageDelay: 0.2
   pickUpDistance: 3
   pickUpText: {fileID: 655071712}
 --- !u!1 &2073935427
