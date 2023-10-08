@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject sword;
     private Animator swordAnimator;
     [SerializeField] private float swordRange = 3f;
+    [SerializeField] private float swordDamage = 10f;
     [SerializeField] private float swordInterval = 0.667f; //length of swing animation
     [SerializeField] private float damageDelay = 0.2f; //delay before animation reaches peak and damage is dealt
     private bool canSwing = true;
@@ -176,7 +177,11 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out var hit, swordRange))
         {
             GameObject other = hit.collider.gameObject;
-            Debug.Log("sword hit " + other.name);
+            if (other.CompareTag("Mob"))
+            {
+                MobController mob = other.GetComponent<MobController>();
+                mob.TakeDamage(swordDamage);
+            }
         }
         yield return new WaitForSeconds(swordInterval - damageDelay); //wait for animation to finish
         canSwing = true;
