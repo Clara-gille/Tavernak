@@ -179,8 +179,9 @@ public class PlayerController : MonoBehaviour
             GameObject other = hit.collider.gameObject;
             if (other.CompareTag("Mob"))
             {
-                MobController mob = other.GetComponent<MobController>();
-                String drop = mob.TakeDamage(swordDamage);
+                GameObject mob = other.transform.parent.gameObject;
+                MobController mobController = mob.GetComponent<MobController>();
+                String drop = mobController.TakeDamage(swordDamage);
                 if (drop != null)
                 {
                     //drop item
