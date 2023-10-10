@@ -59,16 +59,19 @@ public class MobController : MonoBehaviour
             {
                 currentWaypoint = 0;
             }
-            
-            
         }
         
-        //todo : use force to turn
-        Quaternion lookAtWp = Quaternion.LookRotation(waypoints[currentWaypoint].transform.position - body.transform.position);
-        float turnSpeedDivider = 200; //allows turnSpeed values to be between 1 and 10
-        body.transform.rotation = Quaternion.Slerp(body.transform.rotation, lookAtWp, turnSpeed / turnSpeedDivider);
+        Vector3 directionToWaypoint = waypoints[currentWaypoint].transform.position - body.transform.position;
+        Vector3 forward = body.transform.forward;
         
+        //angle between the mob's forward and the direction to the waypoint
+        float angleToWaypoint = Vector3.SignedAngle(forward, directionToWaypoint, Vector3.up);
+
+        //torque to apply to turn towards the waypoint
+        float torqueDivider = 1000; //allows turnSpeed values to be between 1 and 10
+        float torque = angleToWaypoint * turnSpeed / torqueDivider;
+        rb.AddTorque(Vector3.up * torque, ForceMode.Force);
         
-        rb.AddForce(body.transform.forward * speed, ForceMode.Impulse);
+        rb.AddForce(forward * speed, ForceMode.Force);
     }
 }
