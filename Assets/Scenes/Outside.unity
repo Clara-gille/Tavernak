@@ -765,6 +765,7 @@ GameObject:
   - component: {fileID: 610810814}
   - component: {fileID: 610810813}
   - component: {fileID: 610810812}
+  - component: {fileID: 610810816}
   m_Layer: 0
   m_Name: Body
   m_TagString: Mob
@@ -860,6 +861,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 764877804}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!54 &610810816
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610810810}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 2
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &611185724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,8 +1171,8 @@ MonoBehaviour:
   - {fileID: 1244947791}
   - {fileID: 947439374}
   waypointRadius: 3
-  speed: 5
-  turnSpeed: 2
+  speed: 12
+  turnSpeed: 5
 --- !u!1 &814917424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1310,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071066, y: -0, z: -0, w: 0.70710707}
   m_LocalPosition: {x: 2.97, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}

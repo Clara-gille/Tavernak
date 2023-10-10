@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class MobController : MonoBehaviour
 {   
     [Header("Physical body")]
     [SerializeField] private GameObject body;
+    private Rigidbody rb;
     
     [Header("Health and drops")]
     [SerializeField] private float maxHealth = 20f;
@@ -23,11 +25,33 @@ public class MobController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        rb = body.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {   
+        
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    public string TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            return drop;
+        }
+        return null;
+    }
+
+    private void Move()
+    {
         if(Vector3.Distance(body.transform.position, waypoints[currentWaypoint].transform.position) < waypointRadius)
         {
             currentWaypoint++;
@@ -39,20 +63,11 @@ public class MobController : MonoBehaviour
             
         }
         
-        Quaternion lookatWP = Quaternion.LookRotation(waypoints[currentWaypoint].transform.position - body.transform.position);
-        body.transform.rotation = Quaternion.Slerp(body.transform.rotation, lookatWP, Time.deltaTime * turnSpeed);
+        Quaternion lookAtWp = Quaternion.LookRotation(waypoints[currentWaypoint].transform.position - body.transform.position);
+        float turnSpeedDivider = 200; //allows turnSpeed values to be between 1 and 10
+        body.transform.rotation = Quaternion.Slerp(body.transform.rotation, lookAtWp, turnSpeed / turnSpeedDivider);
         
-        body.transform.Translate(0,0,Time.deltaTime * speed);
-    }
-    
-    public string TakeDamage(float damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-            return drop;
-        }
-        return null;
+        
+        rb.AddForce(body.transform.forward * speed, ForceMode.Impulse);
     }
 }
