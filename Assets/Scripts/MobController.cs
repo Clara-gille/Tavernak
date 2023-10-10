@@ -63,6 +63,7 @@ public class MobController : MonoBehaviour
             
         }
         
+        //todo : use force to turn
         Quaternion lookAtWp = Quaternion.LookRotation(waypoints[currentWaypoint].transform.position - body.transform.position);
         float turnSpeedDivider = 200; //allows turnSpeed values to be between 1 and 10
         body.transform.rotation = Quaternion.Slerp(body.transform.rotation, lookAtWp, turnSpeed / turnSpeedDivider);
