@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using TMPro;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 
 public class PlayerMovements : MonoBehaviour
@@ -27,9 +31,7 @@ public class PlayerMovements : MonoBehaviour
     //states and inputs 
     [Header ("Inputs")]
     [SerializeField] PlayerInput playerInput;
-    private Vector3 horizontal;
-    private Vector3 vertical;
-    private bool isJumping;
+    private Vector2 movementInput;
     private bool isRunning; 
     private bool isGrounded = false;
     
@@ -64,17 +66,9 @@ public class PlayerMovements : MonoBehaviour
     private void PlayerMove()
     {   
         //force adapt to running or walking and is normalized to avoid diagonal speed boost
+        Vector3 horizontal = transform.right * movementInput.x;
+        Vector3 vertical = transform.forward * movementInput.y;
         Vector3 force = (horizontal + vertical).normalized * (!isGrounded ? 0 : isRunning ? runSpeed : walkSpeed);
-        
-        //jump if not in the air
-        // if (isJumping && isGrounded)
-        // {
-        //     force.y += jumpForce;
-        //     isGrounded = false;
-        //     //change drag when in the air
-        //     rb.drag = airDrag;
-        // }
-        //apply force
         rb.AddForce(force, ForceMode.Impulse);
     }
     
@@ -90,10 +84,8 @@ public class PlayerMovements : MonoBehaviour
     
     private void GetMovementInputs()
     {
-        isRunning = Input.GetButton("Fire3"); //shift 
-        horizontal = transform.right *  Input.GetAxis("Horizontal"); 
-        vertical   = transform.forward * Input.GetAxis("Vertical");
-        isJumping = Input.GetButton("Jump");
+        isRunning = playerInput.actions["Run"].ReadValue<float>() > 0;
+        movementInput = playerInput.actions["Move"].ReadValue<Vector2>();
     }
     
     private void GetLookInputs()
@@ -112,7 +104,7 @@ public class PlayerMovements : MonoBehaviour
         }
     }
 
-    private void Jump(InputAction.CallbackContext context)
+    private void Jump()
     {
         if (isGrounded)
         {
