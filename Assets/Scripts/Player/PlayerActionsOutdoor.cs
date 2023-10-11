@@ -76,7 +76,7 @@ public class PlayerActionsOutdoor : MonoBehaviour
         }
     }
 
-    public void Attack()
+    private void Attack()
     {
         if (canSwing)
         {
