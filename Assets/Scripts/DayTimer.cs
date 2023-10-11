@@ -29,19 +29,20 @@ public class DayTimer : MonoBehaviour
             }
             else
             {
-                if (SceneManager.GetActiveScene().buildIndex == 1)
+                switch (SceneManager.GetActiveScene().buildIndex)
                 {
-                    SceneManager.LoadScene(sceneBuildIndex: 2);
+                    case 1:
+                        timeLeft = 10;
+                        SceneManager.LoadScene(sceneBuildIndex: 2);
+                        break;
+                    case 2:
+                        timeLeft = 10;
+                        SceneManager.LoadScene(sceneBuildIndex: 1);
+                        break;
+                    default:
+                        SceneManager.LoadScene(sceneBuildIndex: 0);
+                        break;
                 }
-                if (SceneManager.GetActiveScene().buildIndex == 2)
-                {
-                    SceneManager.LoadScene(sceneBuildIndex: 1);
-                }
-                else
-                {
-                    SceneManager.LoadScene(sceneBuildIndex: 0);
-                }
-                timeLeft= 10;
             }
         }
     }
