@@ -104,13 +104,6 @@ MonoBehaviour:
   airDrag: 0.5
   cam: {fileID: 6809106160380320053}
   camSensitivity: 2
-  sword: {fileID: 654081391325403720}
-  swordRange: 2
-  swordDamage: 10
-  swordInterval: 0.5
-  damageDelay: 0.12
-  pickUpDistance: 3
-  pickUpText: {fileID: 0}
 --- !u!1 &6809106160380320053
 GameObject:
   m_ObjectHideFlags: 0
