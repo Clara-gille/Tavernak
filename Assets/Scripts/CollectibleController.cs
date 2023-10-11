@@ -25,8 +25,7 @@ public class CollectibleController : MonoBehaviour
     
     public void PickUp()
     {
-        //temporary
-        Debug.Log(gameObject.name + " picked up!"); //wesh ma giga gadji
+        Debug.Log(gameObject.name + " picked up!"); 
         Destroy(gameObject);
     } 
 }
