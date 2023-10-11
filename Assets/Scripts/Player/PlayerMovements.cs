@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Properties;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class PlayerMovements : MonoBehaviour
 {   
@@ -23,6 +25,8 @@ public class PlayerMovements : MonoBehaviour
     private float yRotation = 0;
     
     //states and inputs 
+    [Header ("Inputs")]
+    [SerializeField] PlayerInput playerInput;
     private Vector3 horizontal;
     private Vector3 vertical;
     private bool isJumping;
@@ -63,13 +67,13 @@ public class PlayerMovements : MonoBehaviour
         Vector3 force = (horizontal + vertical).normalized * (!isGrounded ? 0 : isRunning ? runSpeed : walkSpeed);
         
         //jump if not in the air
-        if (isJumping && isGrounded)
-        {
-            force.y += jumpForce;
-            isGrounded = false;
-            //change drag when in the air
-            rb.drag = airDrag;
-        }
+        // if (isJumping && isGrounded)
+        // {
+        //     force.y += jumpForce;
+        //     isGrounded = false;
+        //     //change drag when in the air
+        //     rb.drag = airDrag;
+        // }
         //apply force
         rb.AddForce(force, ForceMode.Impulse);
     }
@@ -105,6 +109,17 @@ public class PlayerMovements : MonoBehaviour
         {   
             rb.drag = groundDrag;
             isGrounded = true;
+        }
+    }
+
+    private void Jump(InputAction.CallbackContext context)
+    {
+        if (isGrounded)
+        {
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            isGrounded = false;
+            //change drag when in the air
+            rb.drag = airDrag;
         }
     }
 }
