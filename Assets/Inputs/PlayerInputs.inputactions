@@ -1,0 +1,34 @@
+{
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "Outdoor",
+            "id": "a38dc98f-7a9e-40ab-8a73-7bcefd7ef8f9",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "80147370-2f0d-4785-837b-9abb056764fc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "edcb12d2-9450-49a3-ae2a-1e5c15c01fd7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
