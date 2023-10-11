@@ -41,6 +41,7 @@ public class DayTimer : MonoBehaviour
                 {
                     SceneManager.LoadScene(sceneBuildIndex: 0);
                 }
+                timeLeft= 10;
             }
         }
     }
