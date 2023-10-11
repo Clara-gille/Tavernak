@@ -24,7 +24,7 @@ public class PlayerMovements : MonoBehaviour
     
     [Header("Camera")]
     public GameObject cam;
-    [SerializeField] float camSensitivity = 2f;
+    [SerializeField] float camSensitivity = 0.1f;
     private float xRotation = 0;
     private float yRotation = 0;
     
@@ -90,8 +90,9 @@ public class PlayerMovements : MonoBehaviour
     
     private void GetLookInputs()
     {
-        xRotation -= Input.GetAxisRaw("Mouse Y") * camSensitivity;
-        yRotation += Input.GetAxisRaw("Mouse X") * camSensitivity;
+        Vector2 lookInput = playerInput.actions["Look"].ReadValue<Vector2>();
+        xRotation -= lookInput.y * camSensitivity;
+        yRotation += lookInput.x * camSensitivity;
     }
 
     private void OnCollisionEnter(Collision other)

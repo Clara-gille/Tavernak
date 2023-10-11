@@ -2175,6 +2175,10 @@ PrefabInstance:
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 1691693879}
+    - target: {fileID: 8226428476010789787, guid: 82b871f55321cb04e836683c0065edfa, type: 3}
+      propertyPath: camSensitivity
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
