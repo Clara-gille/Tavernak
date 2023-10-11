@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerActionsOutdoor : MonoBehaviour
 {   
@@ -22,10 +23,10 @@ public class PlayerActionsOutdoor : MonoBehaviour
     [SerializeField] private float pickUpDistance = 3f;
     [SerializeField] private TextMeshProUGUI pickUpText;
     
+    [Header ("Inputs")]
+    [SerializeField] PlayerInput playerInput;
     private bool isPickingUp;
-    private bool isAttacking;
     
-    private static readonly int Swing = Animator.StringToHash("Swing");
     private static readonly int IsSwinging = Animator.StringToHash("isSwinging");
     
     // Start is called before the first frame update
@@ -37,18 +38,16 @@ public class PlayerActionsOutdoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        getActionsInputs();
+        GetActionsInputs();
     }
     void FixedUpdate()
     {
         PickUpRay();
-        SwordHandler();
     }
 
-    void getActionsInputs()
+    void GetActionsInputs()
     {
-        isPickingUp = Input.GetButton("Fire2"); //right click
-        isAttacking = Input.GetButton("Fire1"); //left click
+        isPickingUp = playerInput.actions["Pick Up"].ReadValue<float>() > 0;
     }
     
     private void PickUpRay()
@@ -77,11 +76,9 @@ public class PlayerActionsOutdoor : MonoBehaviour
         }
     }
 
-    private void SwordHandler()
+    public void Attack()
     {
-        //sword attack animation
-        swordAnimator.SetBool(IsSwinging, isAttacking);
-        if (isAttacking && canSwing)
+        if (canSwing)
         {
             StartCoroutine(SwordAttack());
         }
@@ -90,6 +87,8 @@ public class PlayerActionsOutdoor : MonoBehaviour
     IEnumerator SwordAttack()
     {   
         canSwing = false;
+        //sword attack animation
+        swordAnimator.SetBool(IsSwinging, true);
         yield return new WaitForSeconds(damageDelay); //wait for animation to reach peak
         //ray from center of the screen
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -110,6 +109,7 @@ public class PlayerActionsOutdoor : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(swordInterval - damageDelay); //wait for animation to finish
+        swordAnimator.SetBool(IsSwinging, false);
         canSwing = true;
     }
 }
