@@ -105,7 +105,8 @@ MonoBehaviour:
   groundDrag: 5
   airDrag: 0.5
   cam: {fileID: 6809106160380320053}
-  camSensitivity: 2
+  camSensitivity: 0.1
+  playerInput: {fileID: 6200365365749430542}
 --- !u!114 &567171891937803041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   damageDelay: 0.12
   pickUpDistance: 3
   pickUpText: {fileID: 0}
+  playerInput: {fileID: 6200365365749430542}
 --- !u!114 &6200365365749430542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
+  m_Actions: {fileID: -944628639613478452, guid: 05b38977f366b7e4992d2fa906b64bdd, type: 3}
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -150,10 +152,58 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226428476010789787}
+        m_TargetAssemblyTypeName: PlayerMovements, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 80147370-2f0d-4785-837b-9abb056764fc
+    m_ActionName: Outdoor/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9ca793a6-dda1-46b2-b9f0-bdd68f269f52
+    m_ActionName: Outdoor/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26db34cc-6105-4832-853f-3e416f0c6cf0
+    m_ActionName: Outdoor/Run[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd6c121d-2330-4515-85f4-e991db589fe6
+    m_ActionName: Outdoor/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 567171891937803041}
+        m_TargetAssemblyTypeName: PlayerActionsOutdoor, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a5c8d2ca-1176-4ea3-b857-71b9d463d2f2
+    m_ActionName: Outdoor/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c35f760-df28-4a83-a061-ec78877ca209
+    m_ActionName: Outdoor/Pick Up[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Outdoor
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &6809106160380320053
