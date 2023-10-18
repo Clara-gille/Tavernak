@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ingredients : ScriptableObject
+[Serializable] public class Ingredients : ScriptableObject
 {
     public class Ingredient
     {
-        public string Name; // "CERISE"
-        public string Sprite; // "cerise.png" for sprite rendering in inventory
+        public string Name { get; private set; } // "CERISE"
+        public string Sprite { get; private set; } // "cerise.png" for sprite rendering in inventory
         public List<Taste> Stats= new List<Taste>(); // [["sweet", 1], ["sour", 2]]
 
         // bitter, acidic, salty, sour, spicy, sweet, creamy, crunchy should be enough ?

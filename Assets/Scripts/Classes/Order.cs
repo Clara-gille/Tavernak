@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class Orders : ScriptableObject
+[Serializable] public class Orders : ScriptableObject
 {
     public class Order
     {
