@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class Orders : MonoBehaviour
+public class Orders : ScriptableObject
 {
     public class Order
     {
