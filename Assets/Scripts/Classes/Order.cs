@@ -5,9 +5,8 @@ using System.Xml.Linq;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-[Serializable] public class Orders : ScriptableObject
-{
-    public class Order
+[CreateAssetMenu(menuName = "Order")] //create a new item in Unity
+public class Order : ScriptableObject
     {
         public string PnjName { get; private set; }
         public int OrderNumber { get; private set; }
@@ -20,4 +19,3 @@ using UnityEngine;
             Stats = stats;
         }
     }
-}

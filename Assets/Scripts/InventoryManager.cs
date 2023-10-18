@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
-    public bool AddItem(Ingredients.Ingredient ingredient)          //let's see if any slot has the same item and then add it
+    public bool AddItem(Ingredient ingredient)          //let's see if any slot has the same item and then add it
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
