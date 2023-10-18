@@ -5,13 +5,13 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
-    public bool AddItem(Item item)          //let's see if any slot has the same item and then add it
+    public bool AddItem(Ingredients.Ingredient ingredient)          //let's see if any slot has the same item and then add it
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null && itemInSlot.item == item)
+            if (itemInSlot != null && itemInSlot.ingredient == ingredient)
             {
                 itemInSlot.count++;
                 itemInSlot.countText.text = itemInSlot.count.ToString();

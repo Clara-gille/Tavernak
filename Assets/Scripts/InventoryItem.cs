@@ -7,7 +7,7 @@ using TMPro;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Item item;
+    public Ingredients.Ingredient ingredient;
     [SerializeField] public TextMeshProUGUI countText;                               //text to display number of items
     public TextMeshProUGUI CountText => countText;
     public int count = 1;                                      //default number of Item
@@ -32,9 +32,5 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("EndDrag");
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);                   //return to original parent
-    }
-
-    private void Start()
-    {
     }
 }
