@@ -26,7 +26,7 @@ public class PlayerActionsOutdoor : MonoBehaviour
     [Header ("Inputs")]
     [SerializeField] PlayerInput playerInput;
     private bool isPickingUp;
-    
+
     private static readonly int IsSwinging = Animator.StringToHash("isSwinging");
     
     // Start is called before the first frame update
