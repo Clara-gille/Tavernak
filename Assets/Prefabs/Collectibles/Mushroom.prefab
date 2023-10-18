@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2822126433028790834}
   - component: {fileID: 6817031825240800642}
   - component: {fileID: 6410407010546564176}
+  - component: {fileID: -6576022739967203762}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Collectible
@@ -118,5 +119,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925c56ca76612384aa7d1c7eca5d6c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6576022739967203762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873306059051799652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a18ea44b7e3aba41b71fb97d50223b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawnRate: 0.75
   name: Mushroom
+  img: {fileID: 21300000, guid: 7fe3ab35ca92f1540978cffdce99ef38, type: 3}
