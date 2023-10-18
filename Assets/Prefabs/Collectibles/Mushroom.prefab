@@ -118,3 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925c56ca76612384aa7d1c7eca5d6c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 0.75
+  name: Mushroom

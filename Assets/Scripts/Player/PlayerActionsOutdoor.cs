@@ -104,7 +104,7 @@ public class PlayerActionsOutdoor : MonoBehaviour
                 if (drop != null)
                 {
                     //drop item
-                    Debug.Log("acquired " + drop);
+                    Debug.Log("acquired " + drop); 
                 }
             }
         }

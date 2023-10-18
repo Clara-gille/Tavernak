@@ -11,7 +11,7 @@ public class MobController : MonoBehaviour
     
     [Header("Health and drops")]
     [SerializeField] private float maxHealth = 20f;
-    [SerializeField] private string drop = "meat";
+    [SerializeField] private string drop = "Meat";
     private float currentHealth;
     
     [Header("Movement")]
