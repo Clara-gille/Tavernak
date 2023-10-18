@@ -9,8 +9,8 @@ using UnityEngine;
 {
     public class Order
     {
-        public string PnjName;
-        public int OrderNumber;
+        public string PnjName { get; private set; }
+        public int OrderNumber { get; private set; }
         public List<Taste> Stats;
 
         public Order(string pnjName, int orderNumber, List<Taste> stats)
