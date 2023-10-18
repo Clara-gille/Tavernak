@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] TextMeshProUGUI btnTxt;
+    private Button btn;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter (PointerEventData eventData)
     {
-        btnTxt.color = 
+            // FAIRE UN PETIT SHAKE ON HOVER ET UN CLICK ONCLICK
     }
     public void OnPointerExit (PointerEventData eventData)
     {
