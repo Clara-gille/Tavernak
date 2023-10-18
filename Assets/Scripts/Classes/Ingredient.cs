@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Ingredient")] //create a new item in Unity
 public class Ingredients : ScriptableObject
 {
     [Serializable] public class Ingredient
