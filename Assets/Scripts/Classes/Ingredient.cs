@@ -8,15 +8,15 @@ using UnityEngine.UI;
 public class Ingredient : ScriptableObject
 {
     public string Name; // "CERISE"
-    public Image Sprite; // "cerise.png" for sprite rendering in inventory
+    public Image Img; // "cerise.png" for sprite rendering in inventory
     public List<Taste> Stats= new List<Taste>(); // [["sweet", 1], ["sour", 2]]
 
     // bitter, acidic, salty, sour, spicy, sweet, creamy, crunchy should be enough ?
 
-    public Ingredient(string name, Sprite sprite, List<Taste> stats)
+    public Ingredient(string name, Image img, List<Taste> stats)
     {
         Name = name;
-        Sprite = sprite;
+        Img = img;
         Stats = stats;
     }
 }
