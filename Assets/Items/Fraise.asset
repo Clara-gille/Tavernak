@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a09482fddc2c14ca5aee03a08df8a9, type: 3}
   m_Name: Fraise
   m_EditorClassIdentifier: 
+  Name: Strawberry
+  Img: {fileID: 0}

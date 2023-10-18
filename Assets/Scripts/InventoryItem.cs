@@ -10,10 +10,18 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Ingredient ingredient;
     [SerializeField] public TextMeshProUGUI countText;                               //text to display number of items
     public TextMeshProUGUI CountText => countText;
-    public int count = 1;                                      //default number of Item
+    public int count = 1;
+    //default number of Item
 
-            
-
+    private void Awake()
+    {
+        Init();
+    }
+    private void Init()
+    {
+        image.sprite = ingredient.Img;
+    }
+    
     public Image image;
     public Transform parentAfterDrag;
     // Drag and Drop
