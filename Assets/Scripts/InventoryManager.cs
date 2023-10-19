@@ -5,8 +5,9 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
-    public bool AddItem(Ingredient ingredient)          //let's see if any slot has the same item and then add it
+    public bool AddItem(ref Ingredient ingredient)          //let's see if any slot has the same item and then add it
     {
+        Debug.Log("Add" + ingredient.name + "to inventory");
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];

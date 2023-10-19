@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6261,6 +6261,10 @@ PrefabInstance:
       propertyPath: pickUpText
       value: 
       objectReference: {fileID: 655071712}
+    - target: {fileID: 567171891937803041, guid: 82b871f55321cb04e836683c0065edfa, type: 3}
+      propertyPath: inventoryManagerObj
+      value: 
+      objectReference: {fileID: 38636449}
     - target: {fileID: 2905863314867681721, guid: 82b871f55321cb04e836683c0065edfa, type: 3}
       propertyPath: m_Name
       value: PlayerOutdoor
@@ -6499,5 +6503,5 @@ SceneRoots:
   - {fileID: 269318143}
   - {fileID: 41057996}
   - {fileID: 764877804}
-  - {fileID: 38636451}
   - {fileID: 619561078}
+  - {fileID: 38636451}

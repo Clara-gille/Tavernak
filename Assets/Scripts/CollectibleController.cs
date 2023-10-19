@@ -6,9 +6,32 @@ using Random = UnityEngine.Random;
 
 public class CollectibleController : MonoBehaviour
 {
-    public void PickUp()
+    [Header("Spawn")] 
+    [SerializeField] private float spawnRate = 0.75f;
+
+    [Header("Stats")] 
+    [SerializeField] private String name;
+    [SerializeField] private Sprite img;
+    private List<Taste> stats;
+    
+    private Ingredient ingredient;
+    // Start is called before the first frame update
+    void Start() 
     {
-        Debug.Log(gameObject.name + " picked up!"); 
+        ingredient = ScriptableObject.CreateInstance<Ingredient>();
+        ingredient.name = name;
+        // ingredient.img = img;
+        // ingredient.stats = stats;
+        
+        if ( Random.Range(0f, 1f) > spawnRate)
+        {   
+            gameObject.SetActive(false);
+        }
+    }
+    public Ingredient PickUp()
+    {
+        
         Destroy(gameObject);
+        return ingredient;
     } 
 }

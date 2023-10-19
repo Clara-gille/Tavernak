@@ -26,6 +26,9 @@ public class PlayerActionsOutdoor : MonoBehaviour
     [Header ("Inputs")]
     [SerializeField] PlayerInput playerInput;
     private bool isPickingUp;
+    
+    [SerializeField] private GameObject inventoryManagerObj;
+    private InventoryManager inventoryManager;
 
     private static readonly int IsSwinging = Animator.StringToHash("isSwinging");
     
@@ -33,6 +36,7 @@ public class PlayerActionsOutdoor : MonoBehaviour
     void Start()
     {
         swordAnimator = sword.GetComponent<Animator>();
+        inventoryManager = inventoryManagerObj.GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -65,7 +69,8 @@ public class PlayerActionsOutdoor : MonoBehaviour
                 if (isPickingUp)
                 {
                     CollectibleController collectible = other.GetComponent<CollectibleController>();
-                    collectible.PickUp();
+                    Ingredient drop = collectible.PickUp();
+                    inventoryManager.AddItem(ref drop);
                 }
                 
             }
