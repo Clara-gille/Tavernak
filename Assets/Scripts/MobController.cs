@@ -9,9 +9,8 @@ public class MobController : MonoBehaviour
     [SerializeField] private GameObject body;
     private Rigidbody rb;
     
-    [Header("Health and drops")]
+    [Header("Health")]
     [SerializeField] private float maxHealth = 20f;
-    [SerializeField] private string drop = "Meat";
     private float currentHealth;
     
     [Header("Movement")]
@@ -21,11 +20,17 @@ public class MobController : MonoBehaviour
     [SerializeField] private float turnSpeed = 2f;
     private int currentWaypoint = 0;
     
+    private Ingredient ingredient;
+    
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         rb = body.GetComponent<Rigidbody>();
+        ingredient = ScriptableObject.CreateInstance<Ingredient>();
+        ingredient.name = "Meat";
+        // ingredient.img = img;
+        // ingredient.stats = stats;
     }
 
     // Update is called once per frame
@@ -39,13 +44,13 @@ public class MobController : MonoBehaviour
         Move();
     }
 
-    public string TakeDamage(float damage)
+    public Ingredient TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            return drop;
+            return ingredient;
         }
         return null;
     }

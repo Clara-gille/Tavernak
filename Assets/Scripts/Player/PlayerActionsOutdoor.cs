@@ -105,11 +105,11 @@ public class PlayerActionsOutdoor : MonoBehaviour
             {
                 GameObject mob = other.transform.parent.gameObject;
                 MobController mobController = mob.GetComponent<MobController>();
-                String drop = mobController.TakeDamage(swordDamage);
+                Ingredient drop = mobController.TakeDamage(swordDamage);
                 if (drop != null)
                 {
                     //drop item
-                    Debug.Log("acquired " + drop); 
+                    inventoryManager.AddItem(ref drop); 
                 }
             }
         }
