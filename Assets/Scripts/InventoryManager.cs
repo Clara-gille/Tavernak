@@ -10,7 +10,6 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject[] itemsPrefabs; //prefabs of items to add to inventory
 
     private Dictionary<string, int> order = new();
-
     private void Start()
     {
         order.Add("Mushroom", 0);
@@ -23,35 +22,34 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     public void AddItem(ref Ingredient ingredient)          //let's see if any slot has the same item and then add it
     {
-        Debug.Log("Add" + ingredient.name + "to inventory");
-
-        InventorySlot slotToUse = inventorySlots[3];
-        GameObject itemToAdd = Instantiate(itemsPrefabs[order[ingredient.name]], slotToUse.transform);
-        itemToAdd.transform.SetParent(slotToUse.transform);
         
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot != null)
+            {
+                Debug.Log(itemInSlot.ingredient.name + " " + ingredient.name);
+            }
+            if (itemInSlot != null && itemInSlot.ingredient.name == ingredient.name)
+            {
+                itemInSlot.count++;
+                itemInSlot.countText.text = itemInSlot.count.ToString();
+                return;
+            }
+        }
         
-        // for (int i = 0; i < inventorySlots.Length; i++)
-        // {
-        //     InventorySlot slot = inventorySlots[i];
-        //     InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-        //     if (itemInSlot != null && itemInSlot.ingredient == ingredient)
-        //     {
-        //         itemInSlot.count++;
-        //         itemInSlot.countText.text = itemInSlot.count.ToString();
-        //         return true;
-        //     }
-        // }
-        //
-        // for (int i = 0; i < inventorySlots.Length; i++)             //let's see if the slot is empty, if yes add
-        // {
-        //     InventorySlot slot = inventorySlots[i];
-        //     InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-        //     if (itemInSlot == null)
-        //     {
-        //         return true;
-        //     }
-        // }
-        // return false;
+        for (int i = 0; i < inventorySlots.Length; i++)             //let's see if the slot is empty, if yes add
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot == null)
+            {
+                GameObject itemToAdd = Instantiate(itemsPrefabs[order[ingredient.name]], slot.transform);
+                itemToAdd.transform.SetParent(slot.transform);
+                return;
+            }
+        }
     }
 
 }
