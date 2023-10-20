@@ -73,7 +73,7 @@ public class MobController : MonoBehaviour
         float angleToWaypoint = Vector3.SignedAngle(forward, directionToWaypoint, Vector3.up);
 
         //torque to apply to turn towards the waypoint
-        float torqueDivider = 1000; //allows turnSpeed values to be between 1 and 10
+        float torqueDivider = 250; //allows turnSpeed values to be between 1 and 10
         float torque = angleToWaypoint * turnSpeed / torqueDivider;
         rb.AddTorque(Vector3.up * torque, ForceMode.Force);
         
