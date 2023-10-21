@@ -27,10 +27,6 @@ public class InventoryManager : MonoBehaviour
         {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null)
-            {
-                Debug.Log(itemInSlot.ingredient.name + " " + ingredient.name);
-            }
             if (itemInSlot != null && itemInSlot.ingredient.name == ingredient.name)
             {
                 itemInSlot.count++;
