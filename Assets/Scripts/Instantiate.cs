@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class Instantiate : MonoBehaviour
 {
-    public GameObject InstantiatePrefab;
+    public DialogueManager InstantiatePrefab;
     void Start()
     {
-        Instantiate(InstantiatePrefab, new Vector3(-3,2,16), Quaternion.identity);
+        DialogueManager obj = Instantiate(InstantiatePrefab, new Vector3(-3, 2, 16), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+    //Test pour + tard
+    /* public GameObject InstantiatePrefab;
+    public int npcCount;
+    void Start()
+    {
+        for (int i = 0; i < npcCount; i++)
+        {
+            CreateNpc();
+        }
+       
+    }
+
+    private void CreateNpc(Order order)
+    {
+        Vector3 position = Random.insideUnitSphere; // new Vector3(-3, 2, 16)
+        GameObject obj = Instantiate(InstantiatePrefab, position, Quaternion.identity);
+        obj.GetComponent<MeshRenderer>().material.color = GetRandomColor();
+    }
+
+    private Color GetRandomColor()
+    {
+        return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f,1f));
+    }
+    */
 }

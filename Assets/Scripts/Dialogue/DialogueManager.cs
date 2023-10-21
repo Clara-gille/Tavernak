@@ -28,9 +28,11 @@ public class DialogueManager : MonoBehaviour
 
     void OnMouseOver()
     {
-        distance = Vector3.Distance(player.transform.position, this.transform.position);
+        //check if the player is close enough to the npc
+        distance = Vector3.Distance(player.transform.position, this.transform.position); 
         if(distance <= 2.5f)
         {
+            //allow the choice of the player lines when scrolling the mouse scrollwheel
             if(Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
                 curResponseTracker++;
@@ -47,7 +49,8 @@ public class DialogueManager : MonoBehaviour
                     curResponseTracker = 0;
                 }
             }
-            //trigger dialogue
+
+            //trigger dialogue when key E is down
             if(Input.GetKeyDown(KeyCode.E) && isTalking == false) 
             {
                 StartConversation();
@@ -57,6 +60,8 @@ public class DialogueManager : MonoBehaviour
                 EndDialogue();
             }
 
+            //modify the npc's answer after the choice of the player's line by pressing space bar
+            //might need to optimize it later
             if(curResponseTracker == 0 && npc.playerDialogue.Length >= 0) 
             {
                 playerResponse.text = npc.playerDialogue[0];
