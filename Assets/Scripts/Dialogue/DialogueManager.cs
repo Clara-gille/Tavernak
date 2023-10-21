@@ -7,19 +7,19 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public NPC npc;
+    [SerializeField] public NPC npc;
 
     Boolean isTalking = false;
 
     float distance;
     float curResponseTracker = 0;
 
-    public GameObject player;
-    public GameObject dialogueUI;
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject dialogueUI;
 
-    public TextMeshProUGUI npcName;
-    public TextMeshProUGUI npcDialogueBox;
-    public TextMeshProUGUI playerResponse;
+    [SerializeField] public TextMeshProUGUI npcName;
+    [SerializeField] public TextMeshProUGUI npcDialogueBox;
+    [SerializeField] public TextMeshProUGUI playerResponse;
 
     void Start()
     {
@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
             if(curResponseTracker == 0 && npc.playerDialogue.Length >= 0) 
             {
                 playerResponse.text = npc.playerDialogue[0];
-                if(Input.GetKeyDown(KeyCode.Escape))
+                if(Input.GetKeyDown(KeyCode.Space))
                 {
                     npcDialogueBox.text = npc.dialogue[1];
                 }
@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
             else if(curResponseTracker == 1 && npc.playerDialogue.Length >= 1)
             {
                 playerResponse.text = npc.playerDialogue[1];
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     npcDialogueBox.text = npc.dialogue[2];
                 }
@@ -76,7 +76,7 @@ public class DialogueManager : MonoBehaviour
             else if (curResponseTracker == 2 && npc.playerDialogue.Length >= 2)
             {
                 playerResponse.text = npc.playerDialogue[2];
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     npcDialogueBox.text = npc.dialogue[3];
                 }
