@@ -29,16 +29,12 @@ public class MobController : MonoBehaviour
         rb = body.GetComponent<Rigidbody>();
         ingredient = ScriptableObject.CreateInstance<Ingredient>();
         ingredient.name = "Meat";
-        // ingredient.img = img;
-        // ingredient.stats = stats;
+        List<Taste> stats = new List<Taste>();
+        stats.Add(new Taste("Salty", 3));
+        stats.Add(new Taste("Crunchy", 1));
+        ingredient.Stats = stats;
     }
-
-    // Update is called once per frame
-    void Update()
-    {   
-        
-    }
-
+    
     private void FixedUpdate()
     {
         Move();

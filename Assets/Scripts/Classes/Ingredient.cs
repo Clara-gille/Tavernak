@@ -11,7 +11,7 @@ public class Ingredient : ScriptableObject
     public Sprite Img; // "cerise.png" for sprite rendering in inventory
     public List<Taste> Stats= new List<Taste>(); // [["sweet", 1], ["sour", 2]]
 
-    // bitter, acidic, salty, sour, spicy, sweet, creamy, crunchy should be enough ?
+    // salty, sour, sweet, creamy, crunchy should be enough ?
     
     public Ingredient(string name, Sprite img, List<Taste> stats)
     {
