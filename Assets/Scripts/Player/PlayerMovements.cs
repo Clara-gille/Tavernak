@@ -50,10 +50,17 @@ public class PlayerMovements : MonoBehaviour
 
     private void Update()
     {
+        
         //get all inputs
         GetMovementInputs();
         GetLookInputs();
+
+        
+        //change drag when in the air
+        rb.drag = isGrounded ? groundDrag : airDrag;
     }
+
+    
 
     void FixedUpdate()
     {   
@@ -100,8 +107,16 @@ public class PlayerMovements : MonoBehaviour
         //if player is on the ground, change back drag and allow jump
         if (other.gameObject.CompareTag("Ground"))
         {   
-            rb.drag = groundDrag;
             isGrounded = true;
+        }
+    }
+    
+    private void OnCollisionExit(Collision other)
+    {   
+        //if player is not on the ground, change drag and disable jump
+        if (other.gameObject.CompareTag("Ground"))
+        {   
+            isGrounded = false;
         }
     }
 
@@ -111,8 +126,6 @@ public class PlayerMovements : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             isGrounded = false;
-            //change drag when in the air
-            rb.drag = airDrag;
         }
     }
 }
