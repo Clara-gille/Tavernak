@@ -15,8 +15,8 @@ public class InventoryManager : MonoBehaviour
         order.Add("Mushroom", 0);
         order.Add("Strawberry", 1);
         order.Add("Meat", 2);
-        order.Add("Apple", 3);
-        order.Add("Egg", 4);
+        order.Add("Egg", 3);
+        order.Add("Apple", 4);
     }
 
     // Start is called before the first frame update
