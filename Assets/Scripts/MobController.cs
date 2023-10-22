@@ -48,7 +48,9 @@ public class MobController : MonoBehaviour
             Destroy(gameObject);
             return ingredient;
         }
+        rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
         return null;
+        
     }
 
     private void Move()
