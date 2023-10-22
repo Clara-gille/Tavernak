@@ -19,6 +19,16 @@ public class PlayerActionsOutdoor : MonoBehaviour
     [SerializeField] private float damageDelay = 0.12f; //delay before animation reaches peak and damage is dealt
     private bool canSwing = true;
     
+    [Header("Bow")]
+    [SerializeField] private GameObject bow;
+    [SerializeField] private GameObject arrowSpawn;
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private float arrowSpeed = 30f;
+    [SerializeField] private float arrowInterval = 2f;
+    private bool canShoot = true;
+    
+    private bool hasSword = true;
+    
     [Header("Pick Up")] 
     [SerializeField] private float pickUpDistance = 3f;
     [SerializeField] private TextMeshProUGUI pickUpText;
@@ -83,9 +93,13 @@ public class PlayerActionsOutdoor : MonoBehaviour
 
     private void Attack()
     {
-        if (canSwing)
+        if (canSwing && hasSword)
         {
             StartCoroutine(SwordAttack());
+        }
+        else if (canShoot && !hasSword)
+        {
+            StartCoroutine(BowAttack());
         }
     }
 
@@ -116,5 +130,34 @@ public class PlayerActionsOutdoor : MonoBehaviour
         yield return new WaitForSeconds(swordInterval - damageDelay); //wait for animation to finish
         swordAnimator.SetBool(IsSwinging, false);
         canSwing = true;
+    }
+
+    IEnumerator BowAttack()
+    {
+        canShoot = false;
+        
+        //instantiate arrow
+        GameObject arrow = Instantiate(arrowPrefab, arrowSpawn.transform.position, cam.transform.rotation *  Quaternion.Euler(90, 0, 0));
+        
+        arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.up * arrowSpeed, ForceMode.Impulse);
+        
+        yield return new WaitForSeconds(arrowInterval); //wait for animation to finish
+        canShoot = true;
+    }
+    
+    private void SwapWeapons()
+    {
+        if (hasSword)
+        {
+            sword.SetActive(false);
+            bow.SetActive(true);
+            hasSword = false;
+        }
+        else
+        {
+            sword.SetActive(true);
+            bow.SetActive(false);
+            hasSword = true;
+        }
     }
 }
