@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5038847907915252817}
   - component: {fileID: -8855356264179288416}
   m_Layer: 0
-  m_Name: NPC_Taverner
+  m_Name: NPC_Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   npc: {fileID: 11400000, guid: c18e4f36f9cb9d74d99c9bd635f8c69a, type: 2}
   player: {fileID: 0}
   dialogueUI: {fileID: 0}
+  commandPress: {fileID: 0}
   npcName: {fileID: 0}
   npcDialogueBox: {fileID: 0}
   playerResponse: {fileID: 0}

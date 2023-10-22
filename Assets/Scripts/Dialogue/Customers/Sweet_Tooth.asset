@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a7bd2d91b634774d9891bc7e0db5cec, type: 3}
-  m_Name: Taverner
+  m_Name: Sweet_Tooth
   m_EditorClassIdentifier: 
-  name: Taverner
+  name: Sweet Tooth
   dialogue:
-  - Welcome, what I can do for you?
-  - Oh great, we are always in need of more ingredients!
-  - I'm looking for something sweet
+  - Hi, welcome back!
+  - Great thank you! I am ravenous though.
+  - Awesome, I am looking for something sweet!
   - Thank you!
   playerDialogue:
-  - I got ingredients for some recipes if you need them.
-  - What do you want?
+  - Hi, how are you?
+  - I got ingredients for some recipes if you are hungry.
   - Sure, I'll do it.

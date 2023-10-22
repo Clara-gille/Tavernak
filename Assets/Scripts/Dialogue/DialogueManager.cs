@@ -16,24 +16,26 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject dialogueUI;
+    [SerializeField] public GameObject commandPress;
 
     [SerializeField] public TextMeshProUGUI npcName;
     [SerializeField] public TextMeshProUGUI npcDialogueBox;
     [SerializeField] public TextMeshProUGUI playerResponse;
-
     void Start()
     {
         dialogueUI.SetActive(false);
+        commandPress.SetActive(false);
     }
 
-    void OnMouseOver()
+    void Update() //OnMouseOver
     {
         //check if the player is close enough to the npc
         distance = Vector3.Distance(player.transform.position, this.transform.position); 
         if(distance <= 2.5f)
         {
+            commandPress.SetActive(true);
             //allow the choice of the player lines when scrolling the mouse scrollwheel
-            if(Input.GetAxis("Mouse ScrollWheel") < 0f)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
                 curResponseTracker++;
                 if(curResponseTracker >= npc.playerDialogue.Length - 1)
@@ -62,6 +64,7 @@ public class DialogueManager : MonoBehaviour
 
             //modify the npc's answer after the choice of the player's line by pressing space bar
             //might need to optimize it later
+
             if(curResponseTracker == 0 && npc.playerDialogue.Length >= 0) 
             {
                 playerResponse.text = npc.playerDialogue[0];
@@ -102,6 +105,7 @@ public class DialogueManager : MonoBehaviour
     {
         isTalking = false;
         dialogueUI.SetActive(false);
+        commandPress.SetActive(false);
     }
 
 }
