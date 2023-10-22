@@ -90,6 +90,10 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            EndDialogue();
+        }
     }
 
     void StartConversation()
@@ -104,8 +108,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         isTalking = false;
-        dialogueUI.SetActive(false);
         commandPress.SetActive(false);
+        dialogueUI.SetActive(false);
+        
     }
 
 }

@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a7bd2d91b634774d9891bc7e0db5cec, type: 3}
-  m_Name: Sweet_Tooth
+  m_Name: Creamy_Joe
   m_EditorClassIdentifier: 
-  name: Sweet Tooth
+  name: Creamy Joe
   dialogue:
-  - Hi, welcome back! Did the foraging went well?
-  - Great thank you! I am ravenous though.
-  - Awesome, I am graving something sweet if you have that in store!
-  - Thank you!
+  - Hi, how's my favourite taverner?
+  - 'You know me! I''m always down for an omelette. '
   playerDialogue:
-  - Hi, yeah it did actually. Thank you for asking. How are you?
-  - I got ingredients for some recipes if you are hungry.
-  - Sure, I'll do it.
+  - Hello Joe, I am good thanks! The usual?

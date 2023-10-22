@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a7bd2d91b634774d9891bc7e0db5cec, type: 3}
-  m_Name: Sweet_Tooth
+  m_Name: Cunchy_Roll
   m_EditorClassIdentifier: 
-  name: Sweet Tooth
+  name: Krunch Roll
   dialogue:
-  - Hi, welcome back! Did the foraging went well?
-  - Great thank you! I am ravenous though.
-  - Awesome, I am graving something sweet if you have that in store!
-  - Thank you!
+  - Hello Taverner, what did you get today?
+  - I've been hoping for an apple pie for some time now.
+  - Great thank you!
   playerDialogue:
-  - Hi, yeah it did actually. Thank you for asking. How are you?
-  - I got ingredients for some recipes if you are hungry.
-  - Sure, I'll do it.
+  - Hello! I was able to get most of the usual ingredients. Why, do you need something
+    specific?
+  - I'll see what I can do!
