@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1191647986649345853
+--- !u!1 &1909502016755637135
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6705762399289518677}
-  - component: {fileID: 4731930556294306826}
-  - component: {fileID: 407701922571677791}
+  - component: {fileID: 1092732863371195126}
+  - component: {fileID: 1042528494724934790}
+  - component: {fileID: 3093075065322335691}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -18,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6705762399289518677
+--- !u!4 &1092732863371195126
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191647986649345853}
+  m_GameObject: {fileID: 1909502016755637135}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7179337782326896639}
+  m_Father: {fileID: 5805231638771948553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &4731930556294306826
+--- !u!20 &1042528494724934790
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191647986649345853}
+  m_GameObject: {fileID: 1909502016755637135}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -84,15 +84,15 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &407701922571677791
+--- !u!81 &3093075065322335691
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191647986649345853}
+  m_GameObject: {fileID: 1909502016755637135}
   m_Enabled: 1
---- !u!1 &8472225231560080101
+--- !u!1 &4975698882155785129
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,10 +100,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7179337782326896639}
-  - component: {fileID: 3477054911283807674}
-  - component: {fileID: 8197865393802639292}
-  - component: {fileID: 990153276865420208}
+  - component: {fileID: 5805231638771948553}
+  - component: {fileID: 3396730775691301770}
+  - component: {fileID: 67142486634770876}
+  - component: {fileID: 5766918586778136009}
+  - component: {fileID: 5964674118673704339}
+  - component: {fileID: -2077886315159261696}
   m_Layer: 0
   m_Name: PlayerIndoor
   m_TagString: Untagged
@@ -111,29 +113,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7179337782326896639
+--- !u!4 &5805231638771948553
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472225231560080101}
+  m_GameObject: {fileID: 4975698882155785129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6705762399289518677}
+  - {fileID: 1092732863371195126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3477054911283807674
+--- !u!54 &3396730775691301770
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472225231560080101}
+  m_GameObject: {fileID: 4975698882155785129}
   serializedVersion: 4
   m_Mass: 50
   m_Drag: 1
@@ -154,13 +156,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!136 &8197865393802639292
+--- !u!136 &67142486634770876
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472225231560080101}
+  m_GameObject: {fileID: 4975698882155785129}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -177,20 +179,149 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &990153276865420208
+--- !u!114 &5766918586778136009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472225231560080101}
+  m_GameObject: {fileID: 4975698882155785129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35ec1b2de8f6964c9b3a91f4fa1b8f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 05b38977f366b7e4992d2fa906b64bdd, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5964674118673704339}
+        m_TargetAssemblyTypeName: PlayerMovements, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 80147370-2f0d-4785-837b-9abb056764fc
+    m_ActionName: Outdoor/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9ca793a6-dda1-46b2-b9f0-bdd68f269f52
+    m_ActionName: Outdoor/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26db34cc-6105-4832-853f-3e416f0c6cf0
+    m_ActionName: Outdoor/Run[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd6c121d-2330-4515-85f4-e991db589fe6
+    m_ActionName: Outdoor/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerActionsOutdoor, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a5c8d2ca-1176-4ea3-b857-71b9d463d2f2
+    m_ActionName: Outdoor/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c35f760-df28-4a83-a061-ec78877ca209
+    m_ActionName: Outdoor/Pick Up[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 92d322fa-da4d-4a0e-b529-63e305d6d6c7
+    m_ActionName: Outdoor/Inventory[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad94c50f-2b6e-41ae-8bf5-918412531d92
+    m_ActionName: Inventory/Inventory[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b19b9956-b98a-4da5-b3ec-137e536e2015
+    m_ActionName: Indoor/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2820646c-f8e2-4943-994b-d35d507659ee
+    m_ActionName: Indoor/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dd13cae3-13c9-4763-9d82-d51b9b985a59
+    m_ActionName: Indoor/Run[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 87a54ba1-889e-4fa9-b6f2-64216a0ea72f
+    m_ActionName: Indoor/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 972e4d17-9437-47e0-b305-470f891c527f
+    m_ActionName: Indoor/Cooking[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4c649373-555c-48d9-99cc-4497dd8ca24e
+    m_ActionName: Indoor/Inventory[/Keyboard/e]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Indoor
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &5964674118673704339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975698882155785129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f264c8aa063e034e8305f104c72a450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 30
   runSpeed: 60
+  jumpForce: 300
   groundDrag: 5
-  cam: {fileID: 1191647986649345853}
-  camSensitivity: 2
+  airDrag: 0.5
+  cam: {fileID: 1909502016755637135}
+  camSensitivity: 0.1
+  playerInput: {fileID: 5766918586778136009}
+--- !u!114 &-2077886315159261696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975698882155785129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb9f6b5e86463140a646d26f6941c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1909502016755637135}
+  cookingPotDistance: 3
+  playerInput: {fileID: 5766918586778136009}
+  inventoryManagerObj: {fileID: 0}
