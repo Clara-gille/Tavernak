@@ -123,7 +123,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1092732863371195126}
@@ -284,10 +284,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4c649373-555c-48d9-99cc-4497dd8ca24e
     m_ActionName: Indoor/Inventory[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5fc9440a-0f3e-4582-a091-a61122d76e77
-    m_ActionName: Outdoor/Switch[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Indoor
