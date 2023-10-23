@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,5 +12,5 @@ public class NPC : ScriptableObject
     [TextArea(3, 15)]
     public string[] playerDialogue;
 
-    private string[] order; //commande pour + tard
+    public Order order; //commande pour + tard
 }

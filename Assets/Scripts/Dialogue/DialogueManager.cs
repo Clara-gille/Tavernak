@@ -113,5 +113,24 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(false);
         
     }
+    
+    public void ReceiveOrder(List<Ingredient> ingredients)
+    {
+        String wants = npc.order.taste;
+        float satisfaction = 0;
+        foreach (Ingredient ingredient in ingredients)
+        {
+            foreach (Taste taste in ingredient.Stats)
+            {
+                if (taste.Name == wants)
+                {
+                    satisfaction += taste.Value;
+                }
+            }
+            {
+                
+            }
+        }
+    }
 
 }

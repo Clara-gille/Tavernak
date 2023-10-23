@@ -10,12 +10,13 @@ public class Order : ScriptableObject
     {
         public string PnjName { get; private set; }
         public int OrderNumber { get; private set; }
-        public List<Taste> Stats;
+        
+        public string taste;
 
-        public Order(string pnjName, int orderNumber, List<Taste> stats)
+        public Order(string pnjName, int orderNumber, string taste)
         {
             PnjName = pnjName;
             OrderNumber = orderNumber;
-            Stats = stats;
+            this.taste = taste;
         }
     }
