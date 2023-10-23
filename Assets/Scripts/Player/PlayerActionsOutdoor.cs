@@ -81,7 +81,6 @@ public class PlayerActionsOutdoor : MonoBehaviour
                     CollectibleController collectible = other.GetComponent<CollectibleController>();
                     Ingredient drop = collectible.PickUp();
                     inventoryManager.AddItem(ref drop);
-                    inventoryManager.WriteInventory(ref drop);
                 }
                 
             }

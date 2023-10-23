@@ -19,10 +19,4 @@ public class Order : ScriptableObject
             OrderNumber = orderNumber;
             this.taste = taste;
         }
-
-    // COMPARER L ORDER ET LA RECETTE D INGREDIENTS
-    public int Serve(Order order)
-    {
-        return 0;
-    }
     }
