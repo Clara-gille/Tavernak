@@ -46,4 +46,19 @@ public class CookingSlot : MonoBehaviour, IDropHandler
         itemsToCook.Clear();
     }
 
+
+    public List<Ingredient> Cook()
+    {
+        if (itemsToCook.Count !=0){
+            var itemReturn = new List<Ingredient>();
+            itemReturn.AddRange(itemsToCook); // Copie les éléments de itemsToCook dans itemReturn
+            RemoveAllItems();
+
+            return itemReturn;
+        }
+
+        return null;
+    }
+
+
 }

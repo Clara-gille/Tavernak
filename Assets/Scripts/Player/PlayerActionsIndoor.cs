@@ -12,7 +12,6 @@ public class PlayerControllerIndoor : MonoBehaviour
 
     [SerializeField] public CanvasGroup InventoryCanvas;
     [SerializeField] public GameObject CookingCanvas;
-    [SerializeField] private bool inventoryOpened = false;
 
 
     [Header("Camera")]
@@ -21,6 +20,11 @@ public class PlayerControllerIndoor : MonoBehaviour
    
     [Header("Cooking pot")] 
     [SerializeField] private GameObject cookingPot;
+    [SerializeField] private GameObject soup;
+    private CookingSlot cookingSlot;
+
+    [SerializeField] private GameObject cookingSlotObj;
+
     [SerializeField] private float cookingPotDistance = 3f;
     private bool isInCookingPotRange = false;
 
@@ -34,19 +38,22 @@ public class PlayerControllerIndoor : MonoBehaviour
     [SerializeField] private GameObject inventoryManagerObj;
     private InventoryManager inventoryManager;
 
+
+
+    private List<Ingredient> soupIngredients = new List<Ingredient>();
+
     
 
     void Start()
     {
         inventoryManager = inventoryManagerObj.GetComponent<InventoryManager>();
+        cookingSlot = cookingSlotObj.GetComponent<CookingSlot>();
     }
 
    void Update()
     {
         //cooking need to be in the range of the cooking pot
         isInCookingPotRange = Vector3.Distance(transform.position, cookingPot.transform.position) < cookingPotDistance;
-
-       
     }
    
     public void Cooking()
@@ -60,7 +67,6 @@ public class PlayerControllerIndoor : MonoBehaviour
 
         }
         
-        
     }
 
     public void StopCooking()
@@ -71,7 +77,18 @@ public class PlayerControllerIndoor : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        soupIngredients = cookingSlot.Cook();
+
+        if (soupIngredients != null)
+        {
+            //show the soup
+            soup.SetActive(true);
+        }
+
     }
+
+
+
 
 
 
