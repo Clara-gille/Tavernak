@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] public NPC npc;
