@@ -53,11 +53,11 @@ public class DialogueManager : MonoBehaviour
             }
 
             //trigger dialogue when key E is down
-            if(Input.GetKeyDown(KeyCode.E) && isTalking == false) 
+            if(Input.GetKeyDown(KeyCode.I) && isTalking == false) 
             {
                 StartConversation();
             }
-            else if(Input.GetKeyDown(KeyCode.E) && isTalking == true)
+            else if(Input.GetKeyDown(KeyCode.I) && isTalking == true)
             {
                 EndDialogue();
             }
