@@ -9,11 +9,11 @@ public class Ingredient : ScriptableObject
 {
     public string Name; // "CERISE"
     public Sprite Img; // "cerise.png" for sprite rendering in inventory
-    public List<Taste> Stats= new List<Taste>(); // [["sweet", 1], ["sour", 2]]
+    public List<int> Stats= new List<int>(); // [["sweet", 1], ["sour", 2]]
 
     // salty, sour, sweet, creamy, crunchy should be enough ?
     
-    public Ingredient(string name, Sprite img, List<Taste> stats)
+    public Ingredient(string name, Sprite img, List<int> stats)
     {
         Name = name;
         Img = img;

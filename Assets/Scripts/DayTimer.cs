@@ -10,11 +10,14 @@ public class DayTimer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerTxt;
     private bool isTimerOn = false;
 
+    [SerializeField] private GameObject inventoryManagerObj;
+    private InventoryManager inventoryManager;
+
     // Start is called before the first frame update
     void Start()
     {
         isTimerOn = true;
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        inventoryManager = inventoryManagerObj.GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -29,10 +32,11 @@ public class DayTimer : MonoBehaviour
             }
             else
             {
+                inventoryManager.PassInventory();
                 switch (SceneManager.GetActiveScene().buildIndex)
                 {
                     case 1:
-                        timeLeft = 10;
+                        timeLeft = 10; // BASIC VALUE IF NONE ADDED
                         SceneManager.LoadScene(sceneBuildIndex: 2);
                         break;
                     case 2:
