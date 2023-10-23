@@ -41,7 +41,7 @@ public class PlayerControllerIndoor : MonoBehaviour
         GetActionsInputs();
 
 
-        if (isInCookingPot && CookingPotRay)
+        if (isInCookingPot)
         { // Opening the inventory thank to the key in inputmanager
             inventoryOpened = !inventoryOpened;
         }
