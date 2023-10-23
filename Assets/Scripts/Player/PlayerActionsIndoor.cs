@@ -11,15 +11,19 @@ public class PlayerControllerIndoor : MonoBehaviour
 {
 
     [SerializeField] public CanvasGroup InventoryCanvas;
+    [SerializeField] public GameObject CookingCanvas;
     [SerializeField] private bool inventoryOpened = false;
 
 
     [Header("Camera")]
     public GameObject cam;
+
    
-    [Header("In cooking pot")] 
+    [Header("Cooking pot")] 
+    [SerializeField] private GameObject cookingPot;
     [SerializeField] private float cookingPotDistance = 3f;
-    [SerializeField] private bool inCookingPotRange;
+    private bool isInCookingPotRange = false;
+
 
     [Header ("Inputs")]
     [SerializeField] PlayerInput playerInput;
@@ -39,46 +43,37 @@ public class PlayerControllerIndoor : MonoBehaviour
 
    void Update()
     {
-        GetActionsInputs();
+        //cooking need to be in the range of the cooking pot
+        isInCookingPotRange = Vector3.Distance(transform.position, cookingPot.transform.position) < cookingPotDistance;
 
        
     }
-
-    void FixedUpdate()
+   
+    private void Cooking()
     {
-        CookingPotRay();
-    }
-
-    void GetActionsInputs()
-    {
-        isInCookingPot = playerInput.actions["Cooking"].ReadValue<float>() > 0;
-    }
-    
-    private void CookingPotRay()
-    {
-        //ray from center of the screen
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-
-        //cast the ray
-        if (Physics.Raycast(ray, out var hit, cookingPotDistance))
+        if (isInCookingPotRange)
         {
-            GameObject other = hit.collider.gameObject;
-            if (other.CompareTag("CookingPot"))
-            {
-                inCookingPotRange = true;   
-            }
+            isInCookingPot = true;
+            CookingCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
 
-            else {
-                inCookingPotRange = false;
-            }
-        }
-        else {
-            inCookingPotRange = false;
+            playerInput.SwitchCurrentActionMap("Cooking");
         }
         
-       
+        
     }
 
+    private void StopCooking()
+    {
+
+        isInCookingPot = false;
+        CookingCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        playerInput.SwitchCurrentActionMap("Indoor");
+    }
 
 
 
