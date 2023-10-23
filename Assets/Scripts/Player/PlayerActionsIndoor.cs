@@ -19,6 +19,7 @@ public class PlayerControllerIndoor : MonoBehaviour
    
     [Header("In cooking pot")] 
     [SerializeField] private float cookingPotDistance = 3f;
+    [SerializeField] private bool inCookingPotRange;
 
     [Header ("Inputs")]
     [SerializeField] PlayerInput playerInput;
@@ -40,24 +41,7 @@ public class PlayerControllerIndoor : MonoBehaviour
     {
         GetActionsInputs();
 
-
-        if (isInCookingPot)
-        { // Opening the inventory thank to the key in inputmanager
-            inventoryOpened = !inventoryOpened;
-        }
-
-        if (!inventoryOpened)
-        {
-            InventoryCanvas.alpha = 0.0f; //hide the inventory
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            InventoryCanvas.alpha = 1f;         //show the inventory
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-        }
+       
     }
 
     void FixedUpdate()
@@ -70,7 +54,7 @@ public class PlayerControllerIndoor : MonoBehaviour
         isInCookingPot = playerInput.actions["Cooking"].ReadValue<float>() > 0;
     }
     
-    private bool CookingPotRay()
+    private void CookingPotRay()
     {
         //ray from center of the screen
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -81,12 +65,16 @@ public class PlayerControllerIndoor : MonoBehaviour
             GameObject other = hit.collider.gameObject;
             if (other.CompareTag("CookingPot"))
             {
-                return true;   
+                inCookingPotRange = true;   
             }
 
-            else return false;
+            else {
+                inCookingPotRange = false;
+            }
         }
-        else return false;
+        else {
+            inCookingPotRange = false;
+        }
         
        
     }
