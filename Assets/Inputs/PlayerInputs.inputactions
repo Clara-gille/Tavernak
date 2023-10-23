@@ -355,7 +355,7 @@
                 {
                     "name": "",
                     "id": "0dacaa37-c0ee-449b-a5d3-0468189e2e9c",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -388,34 +388,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Cooking",
-            "id": "2c91d0d5-7a82-4c48-8d54-7a916db9494a",
-            "actions": [
-                {
-                    "name": "Hide",
-                    "type": "Button",
-                    "id": "216cd9a6-f88f-47fb-b542-ef2049bb81e5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "def343af-d246-4c34-8f4b-6c6309f13a34",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

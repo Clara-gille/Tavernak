@@ -58,7 +58,6 @@ public class PlayerControllerIndoor : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
 
-            playerInput.SwitchCurrentActionMap("Cooking");
         }
         
         
@@ -72,7 +71,6 @@ public class PlayerControllerIndoor : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        playerInput.SwitchCurrentActionMap("Indoor");
     }
 
 
