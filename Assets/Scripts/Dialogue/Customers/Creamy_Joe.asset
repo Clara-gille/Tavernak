@@ -15,7 +15,9 @@ MonoBehaviour:
   name: Creamy Joe
   dialogue:
   - Hi, how's my favourite taverner?
-  - 'You know me! I''m always down for an omelette. '
+  - 'Awesome, I''ll be waiting!  I''ve been craving an omelette. '
+  - Oh alright, thanks anyway!
   playerDialogue:
-  - Hello Joe, I am good thanks! The usual?
+  - 1)  I was able to get some eggs. The usual?
+  - 2) I sadly don't have the ingredients for what you want.
   order: {fileID: 11400000, guid: 6c965e8d35557ed45874814c27e27270, type: 2}

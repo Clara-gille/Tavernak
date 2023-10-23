@@ -15,10 +15,10 @@ MonoBehaviour:
   name: Krunch Roll
   dialogue:
   - Hello Taverner, what did you get today?
-  - I've been hoping for an apple pie for some time now.
-  - Great thank you!
+  - Awesome, I'll be waiting!  I've been hoping for an apple pie for some time now.
+  - Oh alright, thanks anyway!
   playerDialogue:
-  - Hello! I was able to get most of the usual ingredients. Why, do you need something
-    specific?
-  - I'll see what I can do!
+  - 1) Hello! I was able to get most of the usual ingredients for an apple pie -
+    yeah.
+  - 2) I couldn't find what I was looking for - I am sorry.
   order: {fileID: 11400000, guid: 6f4697dba3a88914cb8e8be2ae7fecaf, type: 2}

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Salted Sam
   dialogue:
-  - Hello, long time no see! Out in the wild early this morning uh?
-  - Oh, if you were able to get anything to make a dish, I wouldn't be opposed.
+  - 'Hello, long time no see! Did you hunt anything? '
+  - Awesome, I'll be waiting! The smell of meat always wakes me up more.
+  - Oh alright, thanks anyway!
   playerDialogue:
-  - You could say that! I came across some deers while foraging.
+  - 1) I came across some deers while foraging - I'll prep it.
+  - 2) I didn't see any game today sorry.
   order: {fileID: 11400000, guid: 40a54a6b401b3564c861b698d95c1ede, type: 2}
