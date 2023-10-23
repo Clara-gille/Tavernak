@@ -33,7 +33,7 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] PlayerInput playerInput;
     private Vector2 movementInput;
     private bool isRunning; 
-    private bool isGrounded = false;
+    private bool isGrounded = true;
     
     
 

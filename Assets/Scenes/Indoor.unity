@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -841,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805231638771948553, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 0.849
       objectReference: {fileID: 0}
     - target: {fileID: 5805231638771948553, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1575,9 +1575,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1097157774563951262, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 1557626615004778194, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
       propertyPath: m_Name
       value: Tavern
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586321648305002227, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691985233870482382, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2195050668851383149, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1618,6 +1630,98 @@ PrefabInstance:
     - target: {fileID: 2195050668851383149, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604508058821217002, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747928955642423758, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337641124393453477, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689433152421535117, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730154550416304245, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750342961577771684, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240254634950729300, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365495792420198694, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796971964779589944, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346268910272791692, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655679737243678895, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879494379917019353, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916352126014266575, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149148648943761157, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594541698818710567, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650192679153689714, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163430581575330132, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246593014680771334, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280765131656560580, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950684597130621224, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441745186409467570, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643280069942845732, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024971488709553459, guid: e8f5e55a20cc1f14f8a4127a14ec4c26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
