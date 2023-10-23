@@ -18,3 +18,4 @@ MonoBehaviour:
   - 'You know me! I''m always down for an omelette. '
   playerDialogue:
   - Hello Joe, I am good thanks! The usual?
+  order: {fileID: 11400000, guid: 6c965e8d35557ed45874814c27e27270, type: 2}

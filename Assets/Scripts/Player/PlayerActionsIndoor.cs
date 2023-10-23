@@ -49,7 +49,7 @@ public class PlayerControllerIndoor : MonoBehaviour
        
     }
    
-    private void Cooking()
+    public void Cooking()
     {
         if (isInCookingPotRange)
         {
@@ -63,7 +63,7 @@ public class PlayerControllerIndoor : MonoBehaviour
         
     }
 
-    private void StopCooking()
+    public void StopCooking()
     {
 
         isInCookingPot = false;

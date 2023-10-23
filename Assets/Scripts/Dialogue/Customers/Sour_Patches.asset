@@ -20,3 +20,4 @@ MonoBehaviour:
   playerDialogue:
   - Hello! I was able to get a few things yeah. Do you want anything specific?
   - Sure, it's my pleasure. Be right back!
+  order: {fileID: 11400000, guid: 983bdc2585150244ba3bc73ea96ca5ed, type: 2}
