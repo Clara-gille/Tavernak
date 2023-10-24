@@ -50,10 +50,16 @@ public class DayTimer : MonoBehaviour
                             SceneManager.LoadScene(1);
                         }
                         GoldsManager goldsManager = player.GetComponent<GoldsManager>();
-                        goldsManager.RemoveGolds(10);
-                        // Move the object to the scene
-                        MoveInventoryCanvasToScene(1);
-                        SceneManager.LoadScene(1);
+                        if (goldsManager.RemoveGolds(10))
+                        {
+                            SceneManager.LoadScene(0);
+                        }
+                        else
+                        {
+                            // Move the object to the scene
+                            MoveInventoryCanvasToScene(1);
+                            SceneManager.LoadScene(1);
+                        }
                         break;
                     default:
                         SceneManager.LoadScene(sceneBuildIndex: 0);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoldsManager : MonoBehaviour
 {
@@ -22,9 +23,15 @@ public class GoldsManager : MonoBehaviour
         goldsText.text = _golds.ToString() + " golds";
     }
     
-    public void RemoveGolds(int amount)
+    public bool RemoveGolds(int amount)
     {
         _golds -= amount;
         goldsText.text = _golds.ToString() + " golds";
+        bool result = _golds < 0;
+        if (result)
+        {
+            _golds = 0;
+        }
+        return result;
     }
 }

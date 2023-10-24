@@ -15,6 +15,13 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        GameObject inventoryCanvas = GameObject.Find("InventoryCanvas");
+        if (inventoryCanvas != null)
+        {
+            Destroy(inventoryCanvas);
+        }
     }
 
     // Update is called once per frame
