@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject[] apples;
     [SerializeField] GameObject[] eggs;
 
+    [Header("Player")]
+    [SerializeField] GameObject player;
+
     private Dictionary<string, int> order = new();
     private void Start()
     {
@@ -24,6 +28,11 @@ public class InventoryManager : MonoBehaviour
         order.Add("Meat", 2);
         order.Add("Egg", 3);
         order.Add("Apple", 4);
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SpawnInventory();
+        }
     }
 
     // Start is called before the first frame update
@@ -75,6 +84,8 @@ public class InventoryManager : MonoBehaviour
         string path = "Assets/Scripts/Player/PlayerInventory.txt";
         StreamReader reader = new StreamReader(path);
 
+        int s_index = 1, m_index = 1, e_index = 1, a_index = 1;
+
         string line;
 
         while ((line = reader.ReadLine()) != null)
@@ -82,21 +93,36 @@ public class InventoryManager : MonoBehaviour
             switch (line)
             {
                 case string a when a.Contains("Strawberry"):
-
+                    if (strawberrys[s_index].gameObject.activeSelf != false)
+                    {
+                        strawberrys[s_index].gameObject.transform.position = player.gameObject.transform.position;
+                    }
+                    s_index++;
                     break;
                 case string a when a.Contains("Mushroom"):
-
+                    if (mushrooms[m_index].gameObject.activeSelf == false)
+                    {
+                        mushrooms[m_index].gameObject.transform.position = player.gameObject.transform.position;
+                    }
+                    m_index++;
                     break;
                 case string a when a.Contains("Egg"):
-
-                    break;
-                case string a when a.Contains("Meat"):
-
+                    if (eggs[e_index].gameObject.activeSelf == false)
+                    {
+                        eggs[e_index].gameObject.transform.position = player.gameObject.transform.position;
+                    }
+                    e_index++;
                     break;
                 case string a when a.Contains("Apple"):
-
+                    if (apples[a_index].gameObject.activeSelf == false)
+                    {
+                        apples[a_index].gameObject.transform.position = player.gameObject.transform.position;
+                    }
+                    a_index++;
                     break;
             }
         }
+        reader.Close();
+        File.WriteAllText(path, string.Empty);
     }
 }
