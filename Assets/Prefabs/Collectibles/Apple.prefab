@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925c56ca76612384aa7d1c7eca5d6c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0.75
+  spawnRate: 0.9
   name: Apple
   img: {fileID: 0}
 --- !u!1001 &8506147283188352006
