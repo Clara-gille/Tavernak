@@ -147,6 +147,7 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+        
         if (satisfaction >= 3)
         {
             npcDialogueBox.text = "Wonderful! I'll give you " + satisfaction + " coins!";
@@ -155,6 +156,9 @@ public class DialogueManager : MonoBehaviour
         {
             npcDialogueBox.text = "Ewwww :( I'll give you only " + satisfaction + " coins...";
         }
+        
+        GoldsManager goldsManager = player.GetComponent<GoldsManager>();
+        goldsManager.AddGolds((int) satisfaction);
         StartCoroutine(WaitBeforeLeaving());
     }
 

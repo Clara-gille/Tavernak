@@ -35,8 +35,6 @@ public class PlayerMovements : MonoBehaviour
     private bool isRunning; 
     private bool isGrounded = true;
     
-    
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
