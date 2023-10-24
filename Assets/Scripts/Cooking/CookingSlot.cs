@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,6 +19,7 @@ public class CookingSlot : MonoBehaviour, IDropHandler
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
 
             AddItem(inventoryItem.ingredient);
+            WriteInventory(inventoryItem.ingredient);
 
             if(inventoryItem.count != 1){
                 inventoryItem.count--;
@@ -59,6 +61,27 @@ public class CookingSlot : MonoBehaviour, IDropHandler
 
         return null;
     }
+    private void WriteInventory(Ingredient ingredient)
+    {
+        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        StreamReader reader = new StreamReader(path);
 
+        string line;
+        string temp = "";
+        bool removed = false;
 
+        while ((line = reader.ReadLine()) != null)
+        {
+            if ((line.Contains(ingredient.name)) && (removed == false))
+            {
+                removed = true;
+            }
+            else
+            {
+                temp += line + "\t";
+            }
+        }
+        reader.Close();
+        File.WriteAllText(path, temp);
+    }
 }

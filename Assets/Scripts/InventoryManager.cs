@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -22,7 +23,8 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     public void AddItem(ref Ingredient ingredient)          //let's see if any slot has the same item and then add it
     {
-        
+        WriteInventory(ingredient);
+
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -47,5 +49,18 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    private void WriteInventory(Ingredient ingredient)
+    {
+        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        StreamWriter writer = new StreamWriter(path, true);
+        string stats = "";
 
+        foreach (Taste stat in ingredient.Stats)
+        {
+            stats += stat.Name + " " + stat.Value.ToString() + " ";
+        }
+
+        writer.WriteLine(ingredient.name + " " + stats +"\t");
+        writer.Close();
+    }
 }

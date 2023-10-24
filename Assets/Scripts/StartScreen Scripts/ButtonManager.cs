@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     // Start is called before the first frame update
     void Start()
     {
-
+        resetInventoryTxt();
     }
 
     // Update is called once per frame
@@ -39,5 +40,11 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnClickQuit()
     {
         Application.Quit();
+    }
+
+    void resetInventoryTxt()
+    {
+        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        File.WriteAllText(path, string.Empty);
     }
 }
