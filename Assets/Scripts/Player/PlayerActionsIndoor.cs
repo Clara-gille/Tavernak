@@ -85,7 +85,11 @@ public class PlayerControllerIndoor : MonoBehaviour
 
     public List<Ingredient> GetSoupIngredients()
     {
-        return soupIngredients;
+        soup.SetActive(false);
+        var ingredientsReturn = new List<Ingredient>();
+        ingredientsReturn.AddRange(soupIngredients);
+        soupIngredients.Clear();
+        return ingredientsReturn;
     }
 
 

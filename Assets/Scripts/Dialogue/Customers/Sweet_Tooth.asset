@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sweet Tooth
   dialogue:
-  - 'Hi, welcome back! Did the foraging went well? '
-  - Great thank you! I am craving a fruit salad though.
-  - Oh alright, thanks anyway!
+  - Working for the lord weighten my mood, can you cook something to enlighten my
+    day ?
+  - Waiting is still better than working in the fields...
   playerDialogue:
-  - 1) Hi! You're in luck, I have fruits!
-  - 2) I couldn't find any fruits.
+  - You are one lucky man, I found sugarry fruits this morning !
+  - Sorry I don't want to help you.
   order: {fileID: 11400000, guid: 3d77c91c0bbdfc448979c1d4dcd8ccd1, type: 2}

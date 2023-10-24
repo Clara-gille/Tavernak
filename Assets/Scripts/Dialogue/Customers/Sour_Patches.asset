@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sour Patch
   dialogue:
-  - Welcome back! Any luck this morning? If you've got something tart in store, I
-    wouldn't be opposed.
-  - It would be great - thank you! I love strawberries!
-  - Oh alright, thanks anyway!
+  - Heya ! I haven't felt something in a long time, can you cook me something very
+    sour to enliven my day ?
+  - Being bored is not a strong enough emotion...
   playerDialogue:
-  - 1) I was able to grab some straberries. Would you like some?
-  - 2) I didn't find any strawberries I'm sorry.
+  - Absolutly, I'm already on it !
+  - Go fight a dragon or something, I'm not a clown !
   order: {fileID: 11400000, guid: 983bdc2585150244ba3bc73ea96ca5ed, type: 2}

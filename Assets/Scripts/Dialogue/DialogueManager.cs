@@ -8,27 +8,31 @@ using UnityEngine.UI;
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] public NPC npc;
+    [SerializeField] private NPC npc;
 
     Boolean isTalking = false;
 
     float distance;
     int curResponseTracker = 0;
 
-    [SerializeField] public GameObject player;
-    [SerializeField] public GameObject dialogueUI;
-    [SerializeField] public GameObject commandPress;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject dialogueUI;
+    [SerializeField] private GameObject commandPress;
 
     private String state;
     private int currentLine = 0;
 
-    [SerializeField] public TextMeshProUGUI npcName;
-    [SerializeField] public TextMeshProUGUI npcDialogueBox;
-    [SerializeField] public TextMeshProUGUI playerResponse;
+    [SerializeField] private TextMeshProUGUI npcName;
+    [SerializeField] private TextMeshProUGUI npcDialogueBox;
+    [SerializeField] private TextMeshProUGUI playerResponse;
+
+    [SerializeField] private GameObject NpcSpawner;
+    private RandomNpcSpawn npcSpawner;
     void Start()
     {
         dialogueUI.SetActive(false);
         commandPress.SetActive(false);
+        npcSpawner = NpcSpawner.GetComponent<RandomNpcSpawn>();
         state = "arrived";
     }
 
@@ -159,11 +163,16 @@ public class DialogueManager : MonoBehaviour
         playerResponse.text = "";
         yield return new WaitForSeconds(3);
         EndDialogue();
+        state = "arrived";
+        curResponseTracker = 0;
+        currentLine = 0;
+        npcSpawner.SwitchNPC();
     }
     
     private void LeaveEarly()
     {
-        Debug.Log("left early");
+        npcDialogueBox.text = "Oh... I'll give you 0 coins then...and complain to ALL my friends and your manager you aberrant CLOWN !";
+        StartCoroutine(WaitBeforeLeaving());
     }
     
     private List<Taste> DetermineTaste(String mName)

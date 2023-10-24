@@ -19,5 +19,4 @@ MonoBehaviour:
   playerDialogue:
   - 'I''ll manage something, I think I have some eggs '
   - Get out of here !
-  - 
   order: {fileID: 11400000, guid: 6c965e8d35557ed45874814c27e27270, type: 2}

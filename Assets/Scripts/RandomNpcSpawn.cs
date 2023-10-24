@@ -2,35 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RandomNpcSpawn : MonoBehaviour
 {
-    public GameObject[] myObjects;
+    [FormerlySerializedAs("PNJs")]  public GameObject[] NPCs;
     int randomIndex;
+    int currentIndex;
 
-    Boolean isShowing;
-
-    private void Awake()
-    {
-        Hide();
-        randomIndex = UnityEngine.Random.Range(0, myObjects.Length);
-        Debug.Log("HideStart");
-    }
+    
     void Start()
     {
-        Debug.Log("Update");
-        GameObject myObject = myObjects[randomIndex];
-        Debug.Log(randomIndex);
-        myObject.SetActive(true);
-        Debug.Log("Spawn");
+        randomIndex = UnityEngine.Random.Range(0, NPCs.Length);
+        currentIndex = randomIndex;
+        NPCs[randomIndex].SetActive(true);
     }
 
-    void Hide()
+    public void SwitchNPC()
     {
-        isShowing = false;
-        for (int i = 0; i < myObjects.Length; i++)
+        NPCs[currentIndex].SetActive(false);
+        StartCoroutine(SpawnRandom());
+    }
+
+    IEnumerator SpawnRandom()
+    {
+        yield return new WaitForSeconds(3);
+        while(randomIndex == currentIndex) //to avoid spawning the same NPC
         {
-            myObjects[i].SetActive(false);
+            randomIndex = UnityEngine.Random.Range(0, NPCs.Length);
         }
+        currentIndex = randomIndex;
+        NPCs[randomIndex].SetActive(true);
     }
 }

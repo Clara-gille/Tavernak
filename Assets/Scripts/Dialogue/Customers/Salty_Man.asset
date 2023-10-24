@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Salted Sam
   dialogue:
-  - 'Hello, long time no see! Did you hunt anything? '
-  - Awesome, I'll be waiting! The smell of meat always wakes me up more.
-  - Oh alright, thanks anyway!
+  - I drank an entire river, would you cook me something really salty to rince me
+    up ?
+  - The water won't go away on its own...
   playerDialogue:
-  - 1) I came across some deers while foraging - I'll prep it.
-  - 2) I didn't see any game today sorry.
+  - Well, I think I might have just what you need. I'll be right back !
+  - 'You need to go to the hospital, not a tavern ! '
   order: {fileID: 11400000, guid: 40a54a6b401b3564c861b698d95c1ede, type: 2}
