@@ -164,6 +164,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator WaitBeforeLeaving()
     {
+        state = "leaving";
         playerResponse.text = "";
         yield return new WaitForSeconds(3);
         EndDialogue();
