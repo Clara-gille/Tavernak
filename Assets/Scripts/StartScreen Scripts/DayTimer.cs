@@ -4,6 +4,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class DayTimer : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DayTimer : MonoBehaviour
     private bool isTimerOn = false;
     [SerializeField] private GameObject inventoryCanvas;
     [SerializeField] private GameObject player;
+    
+    public UnityEvent onTimerEnd = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class DayTimer : MonoBehaviour
             }
             else
             {
+                onTimerEnd.Invoke();
                 switch (SceneManager.GetActiveScene().buildIndex)
                 {
                     case 1:

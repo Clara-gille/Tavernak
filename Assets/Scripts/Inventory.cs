@@ -14,6 +14,8 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         InventoryCanvas = GetComponent<CanvasGroup>();
+        inventoryOpened = false;
+        Debug.Log("start");
     }
    
     private void Update()
@@ -34,5 +36,10 @@ public class Inventory : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
+    }
+    
+    public void CloseInventory()
+    {
+        inventoryOpened = false;
     }
 }

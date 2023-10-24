@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GoldsManager : MonoBehaviour
 {
-    private static int _golds = 0;
+    private static int _golds = 11;
     [SerializeField] private TextMeshProUGUI goldsText;
     
     private void Start()

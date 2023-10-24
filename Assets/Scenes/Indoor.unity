@@ -641,6 +641,21 @@ MonoBehaviour:
   timerTxt: {fileID: 381766133}
   inventoryCanvas: {fileID: 1476389855}
   player: {fileID: 1449038420}
+  onTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1476389856}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: CloseInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &381766133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2620,6 +2635,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3568921105527258723, guid: 9c2c067b771d08248948e71acfce5105, type: 3}
   m_PrefabInstance: {fileID: 1476389854}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1476389856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8671114411189417980, guid: 9c2c067b771d08248948e71acfce5105, type: 3}
+  m_PrefabInstance: {fileID: 1476389854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1aec27a8116447ae6c261eaa2d348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1517095111
 GameObject:
   m_ObjectHideFlags: 0
