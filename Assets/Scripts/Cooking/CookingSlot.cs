@@ -63,7 +63,7 @@ public class CookingSlot : MonoBehaviour, IDropHandler
     }
     private void WriteInventory(Ingredient ingredient)
     {
-        string path = "Assets/StreamingAssets/PlayerInventory.txt";
+        string path = Path.Combine(Application.streamingAssetsPath, "PlayerInventory.txt");
         StreamReader reader = new StreamReader(path);
 
         string line;
