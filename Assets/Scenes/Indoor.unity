@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223b4c96ea286a54885b88893b1be6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 30
+  timeLeft: 10
   timerTxt: {fileID: 381766133}
   inventoryCanvas: {fileID: 0}
 --- !u!114 &381766133

@@ -63,4 +63,34 @@ public class InventoryManager : MonoBehaviour
         writer.WriteLine(ingredient.name + " " + stats +"\t");
         writer.Close();
     }
+
+    private void SpawnInventory()
+    {
+        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        StreamReader reader = new StreamReader(path);
+
+        string line;
+
+        while ((line = reader.ReadLine()) != null)
+        {
+            switch (line)
+            {
+                case string a when a.Contains("Strawberry"):
+
+                    break;
+                case string a when a.Contains("Mushroom"):
+
+                    break;
+                case string a when a.Contains("Egg"):
+
+                    break;
+                case string a when a.Contains("Meat"):
+
+                    break;
+                case string a when a.Contains("Apple"):
+
+                    break;
+            }
+        }
+    }
 }

@@ -16,7 +16,6 @@ public class DayTimer : MonoBehaviour
     void Start()
     {
         isTimerOn = true;
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame

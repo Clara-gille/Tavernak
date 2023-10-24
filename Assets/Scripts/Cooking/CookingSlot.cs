@@ -78,7 +78,7 @@ public class CookingSlot : MonoBehaviour, IDropHandler
             }
             else
             {
-                temp += line + "\t";
+                temp += line + "\n";
             }
         }
         reader.Close();
