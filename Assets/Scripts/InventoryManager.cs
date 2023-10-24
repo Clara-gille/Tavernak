@@ -90,32 +90,37 @@ public class InventoryManager : MonoBehaviour
 
         while ((line = reader.ReadLine()) != null)
         {
+            Debug.Log(line);
             switch (line)
             {
                 case string a when a.Contains("Strawberry"):
                     if (strawberrys[s_index].gameObject.activeSelf != false)
                     {
+                        Debug.Log("strawberry");
                         strawberrys[s_index].gameObject.transform.position = player.gameObject.transform.position;
                     }
                     s_index++;
                     break;
                 case string a when a.Contains("Mushroom"):
-                    if (mushrooms[m_index].gameObject.activeSelf == false)
+                    if (mushrooms[m_index].gameObject.activeSelf != false)
                     {
+                        Debug.Log("mushrooms");
                         mushrooms[m_index].gameObject.transform.position = player.gameObject.transform.position;
                     }
                     m_index++;
                     break;
                 case string a when a.Contains("Egg"):
-                    if (eggs[e_index].gameObject.activeSelf == false)
+                    if (eggs[e_index].gameObject.activeSelf != false)
                     {
+                        Debug.Log("eggs");
                         eggs[e_index].gameObject.transform.position = player.gameObject.transform.position;
                     }
                     e_index++;
                     break;
                 case string a when a.Contains("Apple"):
-                    if (apples[a_index].gameObject.activeSelf == false)
+                    if (apples[a_index].gameObject.activeSelf != false)
                     {
+                        Debug.Log("apples");
                         apples[a_index].gameObject.transform.position = player.gameObject.transform.position;
                     }
                     a_index++;
