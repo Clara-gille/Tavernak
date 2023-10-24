@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerActionsOutdoor : MonoBehaviour
 {   
@@ -160,5 +162,10 @@ public class PlayerActionsOutdoor : MonoBehaviour
             bow.SetActive(false);
             hasSword = true;
         }
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

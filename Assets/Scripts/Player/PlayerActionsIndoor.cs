@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
@@ -92,6 +93,10 @@ public class PlayerControllerIndoor : MonoBehaviour
         return ingredientsReturn;
     }
 
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 
 
