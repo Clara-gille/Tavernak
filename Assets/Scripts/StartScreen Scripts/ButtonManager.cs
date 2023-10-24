@@ -11,7 +11,8 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] TextMeshProUGUI btnTxt;
-    private Button btn;
+    [SerializeField] Button btn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +33,12 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter (PointerEventData eventData)
     {
-            // FAIRE UN PETIT SHAKE ON HOVER ET UN CLICK ONCLICK
+        // FAIRE UN PETIT SHAKE ON HOVER ET UN CLICK ONCLICK
+        btn.transform.position += new Vector3(2.713409f, -2.470963f, 0);
     }
     public void OnPointerExit (PointerEventData eventData)
     {
-
+        btn.transform.position += new Vector3(-2.713409f, 2.470963f, 0);
     }
 
     public void OnClickStart()
