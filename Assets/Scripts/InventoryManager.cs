@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
     }
     private void WriteInventory(Ingredient ingredient)
     {
-        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        string path = "Assets/StreamingAssets/PlayerInventory.txt";
         StreamWriter writer = new StreamWriter(path, true);
         string stats = "";
 
@@ -81,7 +81,7 @@ public class InventoryManager : MonoBehaviour
 
     private void SpawnInventory()
     {
-        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        string path = "Assets/StreamingAssets/PlayerInventory.txt";
         StreamReader reader = new StreamReader(path);
 
         int s_index = 1, m_index = 1, e_index = 1, a_index = 1;

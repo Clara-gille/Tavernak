@@ -15,7 +15,6 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     // Start is called before the first frame update
     void Start()
     {
-        resetInventoryTxt();
     }
 
     // Update is called once per frame
@@ -35,8 +34,13 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnClickStart()
     {
+        resetInventoryTxt();
         SceneManager.LoadScene(sceneBuildIndex: 1);
     }
+    void OnClickLoad() {
+        SceneManager.LoadScene(sceneBuildIndex: 1);
+    }
+
     public void OnClickQuit()
     {
         Application.Quit();
@@ -44,7 +48,7 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void resetInventoryTxt()
     {
-        string path = "Assets/Scripts/Player/PlayerInventory.txt";
+        string path = "Assets/StreamingAssets/PlayerInventory.txt";
         File.WriteAllText(path, string.Empty);
     }
 }

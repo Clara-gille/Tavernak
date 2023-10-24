@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bcb545381c4a140a5d11dcc8846c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnTxt: {fileID: 0}
+  btnTxt: {fileID: 733244591}
 --- !u!114 &378990041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 708580081}
   - component: {fileID: 708580080}
   m_Layer: 5
-  m_Name: OptionBtnHolder
+  m_Name: StartBtnHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bcb545381c4a140a5d11dcc8846c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnTxt: {fileID: 0}
+  btnTxt: {fileID: 1137192938}
 --- !u!1 &981446102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bcb545381c4a140a5d11dcc8846c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnTxt: {fileID: 0}
+  btnTxt: {fileID: 324581320}
 --- !u!1 &1137192936
 GameObject:
   m_ObjectHideFlags: 0
