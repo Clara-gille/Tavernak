@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Creamy Joe
   dialogue:
-  - Hi, how's my favourite taverner?
-  - 'Awesome, I''ll be waiting!  I''ve been craving an omelette. '
-  - Oh alright, thanks anyway!
+  - 'Hello, leprosy took all my teeth, do you have somthing i could eat anyway ? '
+  - I'm waiting ...
   playerDialogue:
-  - 1)  I was able to get some eggs. The usual?
-  - 2) I sadly don't have the ingredients for what you want.
+  - 'I''ll manage something, I think I have some eggs '
+  - Get out of here !
+  - 
   order: {fileID: 11400000, guid: 6c965e8d35557ed45874814c27e27270, type: 2}
