@@ -11,6 +11,7 @@ public class DayTimer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerTxt;
     private bool isTimerOn = false;
     [SerializeField] private GameObject inventoryCanvas;
+    [SerializeField] private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,8 @@ public class DayTimer : MonoBehaviour
                         {
                             SceneManager.LoadScene(1);
                         }
+                        GoldsManager goldsManager = player.GetComponent<GoldsManager>();
+                        goldsManager.RemoveGolds(10);
                         // Move the object to the scene
                         MoveInventoryCanvasToScene(1);
                         SceneManager.LoadScene(1);
