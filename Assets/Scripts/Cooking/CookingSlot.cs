@@ -9,7 +9,7 @@ public class CookingSlot : MonoBehaviour, IDropHandler
 
     //list of items that can be cooked
     private List<Ingredient> itemsToCook = new List<Ingredient>();
-
+    [SerializeField] ParticleSystem cookingParticles;
     private int listMax = 3;
 
 
@@ -55,7 +55,7 @@ public class CookingSlot : MonoBehaviour, IDropHandler
             var itemReturn = new List<Ingredient>();
             itemReturn.AddRange(itemsToCook); // Copie les éléments de itemsToCook dans itemReturn
             RemoveAllItems();
-
+            cookingParticles.Play();
             return itemReturn;
         }
 
