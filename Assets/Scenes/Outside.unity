@@ -7938,6 +7938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d20849d6b7a5d84cae3a1d016362d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldsText: {fileID: 535467800}
 --- !u!114 &2052441361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9193465502643108672, guid: 9c2c067b771d08248948e71acfce5105, type: 3}

@@ -12,21 +12,19 @@ public class GoldsManager : MonoBehaviour
     
     private void Start()
     {
-        goldsText.text = _golds.ToString() + "gold(s)";
+        goldsText.text = _golds.ToString() + " gold";
     }
     
-    private void Update()
-    {
-        Debug.Log(_golds);
-    }
 
     public void AddGolds(int amount)
     {
         _golds += amount;
+        goldsText.text = _golds.ToString() + " golds";
     }
     
     public void RemoveGolds(int amount)
     {
         _golds -= amount;
+        goldsText.text = _golds.ToString() + " golds";
     }
 }
