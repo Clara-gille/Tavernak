@@ -10,6 +10,12 @@ public class InventoryManager : MonoBehaviour
     [Header ("Items prefabs")]
     [SerializeField] GameObject[] itemsPrefabs; //prefabs of items to add to inventory
 
+    [Header ("Ingredients")]
+    [SerializeField] GameObject[] strawberrys;
+    [SerializeField] GameObject[] mushrooms;
+    [SerializeField] GameObject[] apples;
+    [SerializeField] GameObject[] eggs;
+
     private Dictionary<string, int> order = new();
     private void Start()
     {
