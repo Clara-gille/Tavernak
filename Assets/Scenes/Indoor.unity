@@ -998,6 +998,22 @@ PrefabInstance:
       propertyPath: inventoryManagerObj
       value: 
       objectReference: {fileID: 955472070}
+    - target: {fileID: 2360086467899264416, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137714334003091226, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.735
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137714334003091226, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.748
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137714334003091226, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.087
+      objectReference: {fileID: 0}
     - target: {fileID: 4975698882155785129, guid: 17e54579ea3bbfb4ba84021995e0906e, type: 3}
       propertyPath: m_Name
       value: PlayerIndoor
