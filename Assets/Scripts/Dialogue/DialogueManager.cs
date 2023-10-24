@@ -96,7 +96,9 @@ public class DialogueManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space) && isTalking)
                 {
-                    Debug.Log("Here you are");
+                    PlayerControllerIndoor playerActions = player.GetComponent<PlayerControllerIndoor>();
+                    List<Ingredient> soupIngredients = playerActions.GetSoupIngredients();
+                    ReceiveOrder(soupIngredients);
                 }
                    
             }
@@ -123,6 +125,8 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(false);
         
     }
+
+   
     
     public void ReceiveOrder(List<Ingredient> ingredients)
     {
@@ -130,22 +134,68 @@ public class DialogueManager : MonoBehaviour
         float satisfaction = 0;
         foreach (Ingredient ingredient in ingredients)
         {
-            foreach (Taste taste in ingredient.Stats)
+            List<Taste> stats = DetermineTaste(ingredient.Name);
+            foreach (Taste taste in stats)
             {
                 if (taste.Name == wants)
                 {
                     satisfaction += taste.Value;
                 }
             }
-            {
-                
-            }
         }
+        if (satisfaction >= 3)
+        {
+            npcDialogueBox.text = "Wonderful! I'll give you " + satisfaction + " coins!";
+        }
+        else
+        {
+            npcDialogueBox.text = "Ewwww :( I'll give you only " + satisfaction + " coins...";
+        }
+        StartCoroutine(WaitBeforeLeaving());
     }
 
+    IEnumerator WaitBeforeLeaving()
+    {
+        playerResponse.text = "";
+        yield return new WaitForSeconds(3);
+        EndDialogue();
+    }
+    
     private void LeaveEarly()
     {
         Debug.Log("left early");
     }
+    
+    private List<Taste> DetermineTaste(String mName)
+    {
+        List<Taste> stats = new List<Taste>();
+        switch (mName)
+        {
+            case "Mushroom":
+                stats.Add(new Taste("Salty", 2));
+                stats.Add(new Taste("Creamy", 1));
+                stats.Add(new Taste("Crunchy", 1));
+                break;
+            case "Strawberry":
+                stats.Add(new Taste("Sweet", 3));
+                stats.Add(new Taste("Sour", 2));
+                break;
+            case "Apple":
+                stats.Add(new Taste("Sweet", 2));
+                stats.Add(new Taste("Crunchy", 2));
+                break;
+            case "Egg":
+                stats.Add(new Taste("Salty", 2));
+                stats.Add(new Taste("Creamy", 3));
+                stats.Add(new Taste("Crunchy", 3));
+                break;
+            case "Meat" :
+                stats.Add(new Taste("Salty", 3));
+                stats.Add(new Taste("Crunchy", 1));
+                break;
+        }
+        return stats;
+    }
 
 }
+

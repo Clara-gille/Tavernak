@@ -37,12 +37,7 @@ public class PlayerControllerIndoor : MonoBehaviour
     
     [SerializeField] private GameObject inventoryManagerObj;
     private InventoryManager inventoryManager;
-
-
-
     private List<Ingredient> soupIngredients = new List<Ingredient>();
-
-    
 
     void Start()
     {
@@ -71,23 +66,27 @@ public class PlayerControllerIndoor : MonoBehaviour
 
     public void StopCooking()
     {
-
-        isInCookingPot = false;
-        CookingCanvas.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        soupIngredients = cookingSlot.Cook();
-
-        if (soupIngredients != null)
+        if (isInCookingPot)
         {
-            //show the soup
-            soup.SetActive(true);
+            isInCookingPot = false;
+            CookingCanvas.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            soupIngredients = cookingSlot.Cook();
+            if (soupIngredients != null)
+            {
+                //show the soup
+                soup.SetActive(true);
+            }
         }
 
     }
 
-
+    public List<Ingredient> GetSoupIngredients()
+    {
+        return soupIngredients;
+    }
 
 
 
