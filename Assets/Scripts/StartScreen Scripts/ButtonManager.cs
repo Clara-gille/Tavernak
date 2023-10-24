@@ -37,7 +37,7 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         resetInventoryTxt();
         SceneManager.LoadScene(sceneBuildIndex: 1);
     }
-    void OnClickLoad() {
+    public void OnClickLoad() {
         SceneManager.LoadScene(sceneBuildIndex: 1);
     }
 
@@ -48,7 +48,7 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void resetInventoryTxt()
     {
-        string path = "Assets/StreamingAssets/PlayerInventory.txt";
+        string path = Path.Combine(Application.streamingAssetsPath, "PlayerInventory.txt");
         File.WriteAllText(path, string.Empty);
     }
 }
