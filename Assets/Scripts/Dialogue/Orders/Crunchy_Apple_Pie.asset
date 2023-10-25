@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762cb434a2ebcb44c9e0a70eb78e966d, type: 3}
   m_Name: Crunchy_Apple_Pie
   m_EditorClassIdentifier: 
+  taste: Crunchy

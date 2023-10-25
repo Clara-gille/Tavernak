@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Krunch Roll
   dialogue:
-  - Hello Taverner, what did you get today?
-  - I've been hoping for an apple pie for some time now.
-  - Great thank you!
+  - The blacksmith just made me new teeth, do you have something reeeeally crunchy
+    so I can try them
+  - I'll be waiting here.
   playerDialogue:
-  - Hello! I was able to get most of the usual ingredients. Why, do you need something
-    specific?
-  - I'll see what I can do!
+  - Sure ! I'll see what I can do.
+  - What the hell man go eat a tree somewhere else !
+  order: {fileID: 11400000, guid: 6f4697dba3a88914cb8e8be2ae7fecaf, type: 2}

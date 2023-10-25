@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "8cf17308-a6d4-4d15-8cfd-33dc7f16c3b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -210,6 +219,17 @@
                     "action": "Switch",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b280b29a-38ee-4265-89d6-4126608afe9b",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -263,9 +283,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
+                    "name": "Menu",
                     "type": "Button",
-                    "id": "4c649373-555c-48d9-99cc-4497dd8ca24e",
+                    "id": "66902a29-910f-4243-90a4-ac1d55be9cc5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -364,7 +384,7 @@
                 {
                     "name": "",
                     "id": "0dacaa37-c0ee-449b-a5d3-0468189e2e9c",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -374,12 +394,12 @@
                 },
                 {
                     "name": "",
-                    "id": "adfec645-3f34-4093-8ff0-fd40d6ec75b8",
-                    "path": "<Keyboard>/e",
+                    "id": "d1044434-f4c3-475e-b311-5f88934477f2",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Inventory",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

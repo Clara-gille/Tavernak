@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Creamy Joe
   dialogue:
-  - Hi, how's my favourite taverner?
-  - 'You know me! I''m always down for an omelette. '
+  - 'Hello, leprosy took all my teeth, do you have somthing i could eat anyway ? '
+  - I'm waiting ...
   playerDialogue:
-  - Hello Joe, I am good thanks! The usual?
+  - 'I''ll manage something, I think I have some eggs '
+  - Get out of here !
+  order: {fileID: 11400000, guid: 6c965e8d35557ed45874814c27e27270, type: 2}

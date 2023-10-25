@@ -73,3 +73,6 @@ crashlytics-build.properties
 Assets/Imports/Stylized NPC - Peasant Nolant.meta
 Assets/Imports/Stylized NPC - Peasant Nolant.meta
 Assets/Imports/Stylized NPC - Peasant Nolant/Demo/Demo.unity.meta
+Assets/Scripts/Player/playerInventory.txt
+*.txt
+Assets/Scripts/Player/playerInventory.txt

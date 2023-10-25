@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sweet Tooth
   dialogue:
-  - Hi, welcome back! Did the foraging went well?
-  - Great thank you! I am ravenous though.
-  - Awesome, I am graving something sweet if you have that in store!
-  - Thank you!
+  - Working for the lord weighten my mood, can you cook something to enlighten my
+    day ?
+  - Waiting is still better than working in the fields...
   playerDialogue:
-  - Hi, yeah it did actually. Thank you for asking. How are you?
-  - I got ingredients for some recipes if you are hungry.
-  - Sure, I'll do it.
+  - You are one lucky man, I found sugarry fruits this morning !
+  - Sorry I don't want to help you.
+  order: {fileID: 11400000, guid: 3d77c91c0bbdfc448979c1d4dcd8ccd1, type: 2}

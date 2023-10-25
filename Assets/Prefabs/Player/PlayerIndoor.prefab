@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3137714334003091226}
   m_Father: {fileID: 5805231638771948553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1042528494724934790
@@ -123,7 +124,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1092732863371195126}
@@ -257,7 +258,31 @@ MonoBehaviour:
     m_ActionId: 92d322fa-da4d-4a0e-b529-63e305d6d6c7
     m_ActionName: Outdoor/Inventory[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2077886315159261696}
+        m_TargetAssemblyTypeName: PlayerControllerIndoor, Assembly-CSharp
+        m_MethodName: StopCooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5766918586778136009}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
+        m_MethodName: SwitchCurrentActionMap
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Indoor
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ad94c50f-2b6e-41ae-8bf5-918412531d92
     m_ActionName: Inventory/Inventory[/Keyboard/e]
   - m_PersistentCalls:
@@ -277,13 +302,37 @@ MonoBehaviour:
     m_ActionId: 87a54ba1-889e-4fa9-b6f2-64216a0ea72f
     m_ActionName: Indoor/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2077886315159261696}
+        m_TargetAssemblyTypeName: PlayerControllerIndoor, Assembly-CSharp
+        m_MethodName: Cooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5766918586778136009}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
+        m_MethodName: SwitchCurrentActionMap
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Inventory
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 972e4d17-9437-47e0-b305-470f891c527f
     m_ActionName: Indoor/Cooking[/Keyboard/f]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4c649373-555c-48d9-99cc-4497dd8ca24e
-    m_ActionName: Indoor/Inventory[/Keyboard/e]
+    m_ActionId: 5fc9440a-0f3e-4582-a091-a61122d76e77
+    m_ActionName: Outdoor/Switch[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Indoor
@@ -321,7 +370,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb9f6b5e86463140a646d26f6941c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryCanvas: {fileID: 0}
+  CookingCanvas: {fileID: 0}
   cam: {fileID: 1909502016755637135}
+  cookingPot: {fileID: 0}
+  soup: {fileID: 2360086467899264416}
+  cookingSlotObj: {fileID: 0}
   cookingPotDistance: 3
   playerInput: {fileID: 5766918586778136009}
   inventoryManagerObj: {fileID: 0}
+--- !u!1001 &3171061845307601137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1092732863371195126}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.851
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_Name
+      value: food_stew
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+--- !u!1 &2360086467899264416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+  m_PrefabInstance: {fileID: 3171061845307601137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3137714334003091226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6db180a322de6ef488506f8fb922a99a, type: 3}
+  m_PrefabInstance: {fileID: 3171061845307601137}
+  m_PrefabAsset: {fileID: 0}
