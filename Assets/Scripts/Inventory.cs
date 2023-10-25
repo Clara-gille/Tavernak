@@ -15,7 +15,6 @@ public class Inventory : MonoBehaviour
     {
         InventoryCanvas = GetComponent<CanvasGroup>();
         inventoryOpened = false;
-        Debug.Log("start");
     }
    
     private void Update()

@@ -57,7 +57,7 @@ public class StartGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void resetInventoryTxt()
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "PlayerInventory.txt");
+        string path = Path.Combine(Application.persistentDataPath, "PlayerInventory.txt");
         File.WriteAllText(path, string.Empty);
     }
 }
