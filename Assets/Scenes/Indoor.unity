@@ -709,14 +709,14 @@ RectTransform:
   m_GameObject: {fileID: 381766130}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.53542, y: 0.53542, z: 0.53542}
+  m_LocalScale: {x: 0.80462563, y: 0.88829064, z: 0.53542}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 106205178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 734, y: 358}
+  m_AnchoredPosition: {x: 815, y: 411}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &381766132
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223b4c96ea286a54885b88893b1be6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 90
+  timeLeft: 180
   timerTxt: {fileID: 381766133}
   inventoryCanvas: {fileID: 1476389855}
   player: {fileID: 1449038420}
